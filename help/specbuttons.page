@@ -1,0 +1,81 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="specbuttons">
+
+<info>
+	<link type="guide" xref="index#extra"/>
+	<desc>Toolbar application short cuts.</desc>
+</info>
+
+	<title>Special extra/mini buttons</title>
+
+	<p>Using the specbuttons plugin, you can define additional
+	shortcuts. This is meant as convenience - allows to start
+	other audio apps or system controls from within streamtuner2.</p>
+
+	<p><media type="image" src="img/specbuttons.png"></media></p>
+	
+	<p>The settings list can be found with the plugin options in the
+	<key>🔌 Features</key> tab.  It follows the layout of the player/recording
+	configuration.  Except that it lists icons and their according
+	action commands:</p>
+
+	<table shade="rows" rules="rows cols">
+		<tr><td><p><em>Icon</em></p></td>  	        <td><p><em>Cmd</em></p></td> </tr>
+		<tr><td><p><app>volume-up</app></p></td>        <td><p><cmd>amixer sset Master 2%+</cmd></p></td> </tr>
+		<tr><td><p><app>gtk-media-forward</app></p></td><td><p><cmd>vlc next</cmd></p></td> </tr>
+		<tr><td><p><app>mixer</app></p></td>		<td><p><cmd>pavucontrol</cmd></p></td> </tr>
+		<tr><td><p><app>database</app></p></td>		<td><p><cmd>./myscript "%url" "%title"</cmd></p></td> </tr>
+		<tr><td><p><app>./import.png</app></p></td>	<td><p><cmd>audacity %pls</cmd></p></td> </tr>
+	</table>
+
+        <section id="gtk-icons">
+        <title>gtk-icons</title>
+	<p>Note that the icon name can also be that of a Gtk-builtin icon. Their
+        names always start with "<app>gtk-</app>" - for example "<app>gtk-cancel</app>". You can
+        find a list of all available builtins under
+        <link href="http://www.pygtk.org/pygtk2reference/gtk-stock-items.html">http://www.pygtk.org/pygtk2reference/gtk-stock-items.html</link>.
+        They usually match your Gtk theme though.</p>
+	</section>
+	
+        <section id="png-icons">
+        <title>PNG icons</title>
+	<p>In case you enter something like "<app>player</app>", the icon name will be
+	searched for and expanded to an absolute PNG filename. For example
+        "<file>totem</file>" might become <file>/usr/share/icons/HighContrast/16x16/apps/totem.png</file>.</p>
+        
+        <p>This won't always yield the exact icon / theme / or size you wanted. So it's
+	sometimes necessary to look up the complete path yourself.
+	So you might want search them manually <cmd>locate /usr/shar/icons |
+	grep "volume"</cmd> to pick out a more fitting icon.</p>
+	
+	<p>You can also use png files located in your homedir or else.</p>
+	</section>
+
+        <section id="placeholders">
+        <title>Commands</title>
+        <p>You can define any graphical or commandline application to be
+        invoked by your custom toolbar button. Foremost you want to invoke
+        audio controls of course, or start/stop players.</p>
+        
+        <p>For example <cmd>amixer sset Master 1dB+</cmd> is likely to work
+        for all current distributions.</p>
+        
+	<p><link xref="config_apps#placeholders">Placeholders</link>
+	like %title and %url or %pls and %m3u are supported for all commands
+	as well. So you can have additional play/record	shortcuts.</p>
+	</section>
+
+        <section id="icon-rows">
+        <title>icon rows</title>
+	<p>With the "number of rows" setting, more buttons can be packed together.
+	It looks okay with up to 3 rows - when using the large sized main toolbar.
+	The defined icon shortcuts will always be packed column-wise.</p>
+
+        <note style="bug"><p>The icon list isn't ordered. So you cannot
+        define which button appears first. (Albeit the plugin config
+        definition can be changed from 'dict' to 'table' now, and the plugin
+        required just a little editing then.)</p></note>
+        </section>
+
+</page>

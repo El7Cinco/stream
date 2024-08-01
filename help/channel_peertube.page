@@ -1,0 +1,49 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="peertube">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Peertube music/video listings.</desc>
+</info>
+
+	<title><media type="image" src="img/channel_peertube.png" /> Peertube</title>
+	<subtitle><link	href="http://joinpeertube.org/">//joinpeertube.org/</link></subtitle>
+
+	<p>PeerTube is a federated video hosting network. And this channel
+	allows you to browse /Music and other categories. It's not a very
+	broad video ecosystem yet, but fairly international. So perhaps worth a
+	lookaround.</p>
+
+        <p>The category list seems to be uniform across most Peertube
+	instances. So you only need to reload stations/videos once switching
+	the address in the settings. </p>
+
+        <p>Per default you should use VLC and 
+        <link href="http://youtube-dl.org/">youtube-dl</link> in the
+	playback settings. Per default the faux mime type <cmd>video/youtube</cmd>
+	is used for all listings. However, internally there's a lookup for
+	a .m3u or direct .mp4 link already. So the <cmd>video/*</cmd> entry should
+	also be populated.</p>
+
+        <section id="options">
+          <title>Channel options.</title>
+          <terms>
+          <item>
+            <title><code>🔠 Peertube server</code></title>
+            <p>Sets the main instance to query video listings from. Now most
+	    of the other sites will be peered, so the main server doesn't
+	    have that much influence. It changes the ordering however, and
+            will reveal more local videos or languages usually.</p>
+          </item>
+          <item>
+            <title>✕ Missing options</title>
+            <p>Future plugin versions might offer a language filter option.
+            Currently there's not enough content to warrant it.</p>
+          </item>
+          </terms>
+        </section>
+
+</page>

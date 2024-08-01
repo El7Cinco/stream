@@ -1,0 +1,36 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="playing">
+
+	<info>
+	<link type="guide" xref="index#browsing"/>
+	<link type="guide" xref="index#functions"/>
+	<desc>Double click a station to start it in your audio player.</desc>
+	<link type="guide" xref="streams#actions"/>
+	</info>
+
+	<title>Playing</title>
+
+	<p>To start playing a station, you can:</p>
+	
+	<list>
+
+	  <item><p>Just <em>double click</em> an entry.</p></item>
+
+	  <item><p>Use the <key>▶ play</key> toolbar button.</p></item>
+
+	  <item><p>Right click for the context menu and the <key>play</key> action.</p></item>
+
+	  <item><p>Drag and drop it directly into your audio player. (Only on U*ix/X11 systems)</p></item>
+
+	  <item><p>Save it (<key>F2</key>) to a playlist file, then start your player with that.</p></item>
+
+	</list>
+
+        <p>In streamtuner2 you can configure different audio players for different audio
+        formats (MP3 or OGG). In the <link xref="config_apps">Apps</link> section of the
+        <link xref="configuration">settings dialog</link>, you can associate one player
+        with each audio file (MIME) type. Nowadays you can often configure the same player
+        for all audio (and even video) types.</p>
+
+</page>

@@ -1,0 +1,40 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="surfmusik">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>International radio listings.</desc>
+</info>
+
+	<title><media type="image" src="img/channel_surfmusik.png" /> SurfMusic</title>
+	<subtitle><link	href="http://surfmusic.de/">//surfmusic.de/</link></subtitle>
+
+	<p><link href="http://surfmusic.de/">SurfMusic</link> is a user-collection of
+        internet radios. It's grouped by genres, or locations / countries.</p>
+
+        <list>
+          <item><p>It's both pretty large and rather quick to extract listings from.</p></item>
+          <item><p>Pretty much all entries already contain station homepages.</p></item>
+          <item><p>This channel plugin uses raw RegExp extraction.</p></item>
+        </list>
+
+        <note style="bug"><p>The MusicTV and NewsTV sections also return results, but those are mostly
+        web-based video stations. Some of them are outdated links even.</p></note>
+
+<section id="options">
+  <title>Channel options.</title>
+  <terms>
+  <item>
+    <title><code>🔠 Language</code></title>
+    <p>There's an English and a German variant of this radio directory. Genres are
+    also localized.</p>
+    <p>Restart streamtuner2 after switching the Language option. Then
+    use <guiseq><gui>Channel</gui> <gui>Reload category tree</gui></guiseq>.</p>
+  </item>
+  </terms>
+</section>
+
+</page>

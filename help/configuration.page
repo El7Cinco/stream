@@ -1,0 +1,277 @@
+<page
+    xmlns="http://projectmallard.org/1.0/"
+    type="guide" group="first"
+    id="configuration">
+
+<info>
+    <link type="guide" xref="index#functions"/>
+    <!--link type="guide" xref="index#configuration"/-->
+    <desc><key>F12</key> brings up the options window with the Player, Display, System and Plugin sections.</desc>
+</info>
+
+<title>Configuration / Settings dialog</title>
+
+<p>
+There are various options for streamtuner2, available under <guiseq><gui>Edit</gui>
+<gui>Preferences</gui></guiseq> or via <key>F12</key>.
+</p>
+  <p><media type="image" src="img/configtabs.png" mime="image/png" /></p>
+
+<terms>
+  <title>It's grouped into:</title>
+  <item>
+    <title>🔊 <link xref="#apps">Player</link></title>
+    <p>Associates media formats to audio player applications or recording tools.</p>
+  </item>
+  <item>
+    <title>☑ <link xref="#gui">Options</link></title>
+    <p>Influences the display of all stream/station lists, and contains some
+    behaviour and system settings.</p>
+  </item>
+  <item>
+    <title>📻 <link xref="#plugins">Channel Plugins</link></title>
+    <p>Allows to enable or disable channel tabs. Each can have specific
+    options, which can be configured here.</p>
+  </item>
+  <item>
+    <title>🔌 <link xref="#plugins">Feature Plugins</link></title>
+    <p>Another class of plugins enables internal functions, or adds extra menu
+    entries, or further configuration options.</p>
+  </item>
+  <item>
+    <title>📦 <link xref="pluginmanager2">Add</link></title>
+    <p>The <link xref="pluginmanager2">Plugin Manager 2</link> adds another
+    tab for updating or installing new plugins.</p>
+  </item>
+</terms>
+
+
+<section id="apps">
+
+    <title>Player application settings</title>
+
+    <p>MIME types are abstract identifiers for media types. <var>Audio/mpeg</var> for
+    example represents MP3 files, and <var>audio/ogg</var> means OGG Vorbis.  And the player
+    setting dialog simply associates an audio type with a playback application:</p>
+
+    <p><media type="image" src="img/configapps.png" mime="image/png" /></p>
+
+    <list>
+      <item><p><link xref="config_apps">Application names</link> are most
+      always lowercase binary names.</p></item>
+      
+      <item><p> Double click an entry to edit it. Press <key>ENTER</key> to
+      have the new value applied.</p>
+      <p>After editing, the icon next to the application name will be
+      updated.  If it stays green, it's likely to work.  If it turns red /
+      into a stop symbol, then the entered name is likely incorrect.  (Only
+      works on U*ix-systems.)</p></item>
+
+      <item><p>After the application name, you can optionally use
+      <link xref="config_apps#placeholders">a placeholder</link>:</p>
+        <list>
+        <item><p><var>%pls</var> → default format</p></item>
+        <item><p><var>%m3u</var> → older scheme</p></item>
+        <item><p><var>%xspf</var> → modern playlists,</p></item>
+        <item><p><var>%srv</var> → for direct streaming URLs</p></item>
+        </list>
+      </item>
+
+      <item><p>The format entries can specify generic or custom handlers:</p>
+      <list>
+        <item><p>Catch-all specifiers like <var>*/*</var> or a generic
+        <var>audio/*</var> entry allow to configure a default
+        player.</p></item>
+        
+        <item><p>While <var>video/youtube</var> is specific to the Youtube
+        channel.</p></item>
+        
+        <item><p>And <var>url/http</var> a pseudo MIME type to configure a
+        web browser (for station homepages).</p></item>
+      </list>
+      </item>
+
+      <item><p>In practice you only needed one entry for <var>audio/*</var>
+      and one for <var>video/*</var>, both can use the same player even. 
+      </p></item>
+
+      <item><p> You can remove existing entries by clearing both the Format
+      field and its associated Application.  Add completely new associations
+      through the emtpy line.  </p></item>
+    </list>
+
+</section>
+<section id="recording">
+
+    <title>Recording Apps</title>
+
+    <p>The second block of entries in the 'Apps' section specifies recording applications.
+    Here streamripper is preconfigured for audio streams, and youtube-dl for Youtube videos for instance.</p>
+
+<table shade="rows" rules="rows cols">
+    <tr><td><p><var>audio/*</var></p></td>         <td><p><cmd>xterm -e streamripper %srv</cmd></p></td></tr>
+    <tr><td><p><var>video/youtube</var></p></td>   <td><p><cmd>xterm -e "youtube-dl %srv"</cmd></p></td></tr>
+</table>
+
+    <p>To define a target directory, you can often add commandline arguments to each. Also it's typically
+    helpful to leave the xterm prefix on, so you can follow the processing state.</p>
+</section>
+
+
+<section id="gui">
+
+  <title>Display/GUI options</title>
+  <terms>
+    <title>Display settings</title>
+    <item>
+      <title>☑ Show bookmark star</title>
+      <p>Bookmarked stations will be marked with a ★ star in all other station lists / categories.
+      That doesn't often work for the same station entry from two different channel services / tabs though.</p>
+    </item>
+    <item>
+      <title>☑ Save window states</title>
+      <p>Automatically remember window size, selected channel tab, categories, or selected station.
+      Also keeps the width of station list columns. If disabled, you can manually save the current
+      layout/selections via <guiseq><gui>Edit</gui> <gui>Save States</gui></guiseq>.</p>
+    </item>
+    <item>
+      <title>☑ Update window title</title>
+      <p>When switching channel tabs, the Streamtuner2 window title usually gets the current
+      channel name appended (such as "- Shoutcast" or "- Xiph"). You can disable this if it
+      looks confusing. (Requires a restart to fully take effect.)</p>
+    </item>
+    <item><title><link type="guide" xref="favicon">→ Favicon plugin options</link></title></item>
+  </terms>
+
+  <terms>
+    <title>Station loading</title>
+    <item>
+      <title>☑ Prefer HTML traversing (PyQuery) over regex</title>
+      <p>Some channels provide proper APIs to fetch station lists. Others are just websites that
+      require scraping listings out. Most channel tabs provide two alternative methods for that.
+      The DOM/HTML selection method is sometimes slower, but more reliable. As fallback streamtuner2
+      plugins often use a regex to match text. Occasionally the regex method is surprisingly more exact,
+      because directory services often use frightful unstructured HTML. If available, both methods
+      are tried. You can influence the order with this setting, and thus speed it up.</p>
+    </item>
+    <item>
+      <title>🔟 Limit stream number</title>
+      <p> Constrains the length of station lists per category.
+      The number of stations option is not honored by all channel plugins. Often it's not possible to
+      load more or fewer station entries. Some plugins have own settings (in the 'Plugins' section) even.
+      For the major plugins this however limits how many scrollable entries appear in the stream lists.</p>
+    </item>
+    <item>
+      <title>☑ Retain deleted stations</title> <p>When enabled, keeps old station entries when
+      updating/reloading a category/genre.  Services often forget stations or throw them out when inavailable.
+      With this option enabled, these entries are kept in streamtuner2 as strikethrough entries (often
+      at the end of the list).</p>
+    </item>
+    <item>
+      <title>☑ Update favourites from freshened URLs</title>
+      <p>Streaming URLs in bookmarked stations get renewed on category reloads/updates. This isn't
+      very reliable, as often station titles change together with the streaming URLs.</p>
+    </item>
+    <item>
+      <title>☑ Save station lists after updates</title>
+      <p>After reloading (<key>F5</key>) the updated station lists are
+      automatically saved. For favicon updates or drag and drop events this
+      only happens automatically when this option is set.</p>
+    </item>
+ </terms>
+
+  <terms>
+    <title>Playlist</title>
+    <item>
+      <title>☑ Reuse .m3u/.pls files</title> <p>When converting online station playlists,
+      streamtuner2 creates temporary files like <var>shoutcast.11539398391891.m3u</var> for
+      your audio player.  It'll keep those files around in /tmp/streamtuner2 until you quit. 
+      That speeds up switching between and reconnecting to a previous station.  It's in
+      particular necessary when you use <key>⏭</key> or <key>⏪</key> directly in your player. 
+      For <var>%pls</var> references your player typically uses the online-only playlist
+      files anyway.  If you disable this option, then converted pls/m3u/xspf files get
+      recreated repeatedly.</p>
+    </item>
+    <item>
+      <title>☑ Forgo any playlist conversion</title>
+      <p>Per default most server playlists (be they .pls or .m3u, .xpsf) are converted.
+      All player/recording apps receive a default <var>%pls</var> file normally.
+      Set this option to disable any such placeholders from the Player tab, and avoid
+      streamtuner2 pre-downloading any m3u/pls/xspf. Instead your audio  player gets passed
+      the literal server/playlist streaming URL then.</p> <note><p>Note that this is only
+      a minor speedup, but may trip up some applications. A few channel sources don't
+      even provide standard stream addresses and playlists. (Jamendo albums for example really
+      need pre-conversion; no audio player can deal with such custom JSON playlists).
+      In short: you don't normally want to enable this flag - unless you run into problems
+      with streamtuner2 taking too long, or when it hangs by accidentially downloading streams
+      itself.</p></note>
+    </item>
+ </terms>
+
+  <terms>
+    <title>System</title>
+    <item>
+      <title>🔠 Temporary files</title> <p>Streamtuner2 creates temporary .m3u files - for audio
+      players that are configured to use %m3u files instead of %pls or %srv URLs.  For
+      archival purposes you might want to set a dedicated directory for this.  In recent
+      versions streamtuner2 will create a <file>/tmp/streamtuner2</file> directory for itself. 
+      (You cannot set just `/tmp` anymore, because that will be mapped to the longer name. 
+      You can trick the old behaviour with `/tmp/.` however.  Don't do that unless you have a
+      reason).</p>
+    </item>
+    <item>
+      <title>🔠 Config directory</title>
+      <p>Is where streamtuner2 keeps its <file>settings.json</file> and channel caches, favicons, etc.
+      You can't set this in the config dialog. This is just for display. Set the <sys>XDG_CONFIG_HOME</sys>
+      environment variable to adapt.</p>
+    </item>
+    <item>
+      <title>☑ Enable debug messages</title>
+      <p>If you start streamtuner2 from a terminal window (xterm/rxvt), you can get a load of state
+      and processing or debug infos. Enable this only for testing, as it might slow down station
+      rendering.</p>
+    </item>
+    <item>
+      <title>☑ Disable threading</title> <p>Now "threading" is a somewhat technical term.  It
+      means that an application runs different tasks internally at the same time.  It's used
+      for snappier interfaces.  However, it's also difficult to get right at times.  In
+      Streamtuner2 some concurrent tasks conflict with updating the Gtk3 user interface. 
+      Which is why the application may crash even on reloading station lists or when switching
+      between categories too quickly.  This is only an issue for Python3 on Gtk3 with
+      streamtuner2.  In such cases you can disable the concurrent-tasking mode.  The GUI will
+      appear slower at times, and freeze between fetching lists, but remains stable on the
+      upside.  There's also a command line flag <cmd>--nt</cmd> to enable this workaround.</p>
+    </item>
+ </terms>
+
+</section>
+
+<section id="plugins">
+    <title>Channel and feature plugins and settings</title>
+
+    <table><tr>
+    <td><p>The <key>📻 Channels</key> tab shows all available directory
+    services.</p></td>
+    <td><p>While the <key>🔌 Features</key> group provides internal or menu
+    enhancements.</p></td>
+    </tr></table>
+    <p>Disabling or enabling a plugin however requires a restart of Streamtuner2
+    to take effect. (Unless the <link xref="pluginmanager2">Plugin Manager 2</link>
+    is enabled, with its <key>📦 Add</key> tab visible.)</p>
+    
+    
+    <p><media type="image" src="img/configplugins.png" mime="image/png" /></p>
+
+    <p>Each plugin can have its own little list of extra options. They'll be
+    applied right away for already active channel/feature plugins.</p>
+
+</section>
+
+<section id="note">
+    <note style="note"><p>If you want to find out more about the short option descriptions (most settings are checkboxes),
+    please have a look into the channels directory /usr/share/streamtuner2/channels/ and corresponding
+    *.py files. These are somewhat readable even to non-programmers, and sometimes contain more information.</p></note>
+</section>
+
+
+</page>

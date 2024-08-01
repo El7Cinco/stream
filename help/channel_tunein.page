@@ -1,0 +1,32 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="tunein">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Radio and Podcast directory.</desc>
+</info>
+
+	<title><media type="image" src="img/channel_tunein.png" /> TuneIn</title>
+	<subtitle><link	href="http://tunein.com/">//tunein.com/</link></subtitle>
+
+	<p>TuneIn hosts a major radio, show and podcast directory. It also provides the
+        RadioTime/AIR interface for listener feedback or something. ST2 queries the OPML
+        lists only for radio stations currently.</p>
+        
+        <section id="options">
+        <title>Configuration</title>
+	<terms>
+	<item>
+	<title><code>🔠 Categories </code></title>
+        <p>You can switch between "music" and "genres" list. The genres
+        list is basically a longer and expanded variant of "music".
+        Use <guiseq><gui>Channel</gui> <gui>Reload category tree</gui></guiseq>
+        to update them thereafter.</p>
+	</item>
+	</terms>
+        </section>
+
+</page>

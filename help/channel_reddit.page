@@ -1,0 +1,120 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="reddit">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Music subreddit posts</desc>
+</info>
+
+<title><media type="image" src="img/channel_reddit.png" /> Reddit</title>
+<subtitle><link href="http://reddit.com/r/Music">//reddit.com/r/Music</link></subtitle>
+
+	<p>Reddit harbours a growing list of music-related communities.
+        User-contributed audio files or audio/video links can be found
+	across almost two hundred subreddit boards. There's always a
+	mix of new bands or fresh releases to be found, along with
+	links to all-time favourites etc.</p>
+
+        <list>
+          <item><p>Around <em>620</em> subreddits are queried. That's just a selected part
+          though. Most others do not see as many audio posts / or are just for
+          discussion and news.</p></item>
+          <item><p>Besides youtube/mp3 files, this channel may also
+          list Soundcloud/Mixcloud/Bandcamp links.</p></item>
+          <item><p><link href="http://radioreddit.com/">Radioreddit.com</link>
+          even provides streaming servers. Its categories are: main, random,
+          rock, metal, indie, electronic, hiphop, talk, festival.</p></item>
+          <item><p>Thumbnails are slightly larger (32x26) than regular favicons.</p></item>
+          <item><p>All entries also show poster name and user votes.</p></item>
+        </list>
+
+        <p>See the config options if you want to keep regular webpage posts - instead
+        of just showing playable content.</p>
+
+        <section id="statusicons">
+        <subtitle>Status icons</subtitle>
+        <p>Station entries may contain a status icon (leftmost; where usually
+        the bookmarks ✩ star goes).
+        It's a quick indicator of what type of content is linked:</p>
+        <terms>
+          <item>
+            <title>▶</title>
+            <p>Directly playable entry (MP3, MP4, Youtube, MIDI)</p>
+          </item>
+          <item>
+            <title>▶▶</title>
+            <p>Walled garden (Soundcloud, Spotify, Bandcamp, Mixcloud) → playable</p>
+          </item>
+          <item>
+            <title>▮▮</title>
+            <p>Walled gardens without playback handler.</p>
+          </item>
+          <item>
+            <title>📄</title>
+            <p>Just a web-link. Those are kept with the ☒ keep all option.</p>
+          </item>
+        </terms>
+
+        <p>Please note that <guiseq><gui>Channel</gui> <gui>Reload category
+        tree</gui></guiseq> will retrieve a differently structured list of
+        subreddits from the /r/music wiki.</p>
+
+</section>
+
+
+<section id="options">
+ <title>Configuration</title>
+
+ <p>There's a few options for the reddit plugin:</p>
+ 
+  <terms>
+  <item>
+    <title><code>🔟  Number of pages to fetch </code></title>
+    <p>Influences how many JSON requests are made to assemble a list of
+    subreddit posts with playable content. (For this plugin that's
+    configurable, because counting streams wouldn't work as reddit
+    result lists vary wildly in their usable links.)</p>
+  </item>
+  <item>
+    <title><code>🔰 Filter walled gardens </code></title>
+    <p>Many music posts on reddit meanwhile point to one of Soundcloud,
+    Spotify, Bandcamp, Mixcloud. Those are basically just links you had
+    open in your browser. --
+    Now those are labeled "walled gardens" here, because they're hording
+    user content behind a paywall/registration-wall, fiddly NIH APIs,
+    non-standard audio formats, web-only players and sessioning.</p>
+    <p>There's a few players or tools for those better-known hosters. But
+    smaller services fall under the radar. Which is why I think it's unfair
+    to provide out-of-the-box support for just those four services.
+    -- But anyway, you can disable filtering them, if you like. And then
+    <link xref="config_apps">configure</link> a custom player:</p>
+    <table shade="rows" rules="rows cols">
+      <tr><td><p><app>audio/soundcloud</app></p></td><td><p><cmd><link href="https://github.com/rekado/soundCLI">soundcli %srv</link></cmd></p></td></tr>
+      <tr><td><p><app>audio/spotify</app></p></td>   <td><p><cmd><link href="https://github.com/fabiofalci/sconsify">sconsify %srv</link></cmd></p></td></tr>
+      <tr><td><p><app>audio/bandcamp</app></p></td>  <td><p><cmd><link href="https://rg3.github.io/youtube-dl/supportedsites.html">youtube-dl -g %srv</link></cmd></p></td></tr>
+      <tr><td><p><app>audio/mixcloud</app></p></td>  <td><p><cmd><link href="https://rg3.github.io/youtube-dl/supportedsites.html">vlc $(youtube-dl -g %srv)</link></cmd></p></td></tr>
+    </table>
+    <p>Obviously you want to pipe <cmd>youtube-dl</cmd> to an actual audio player
+    again. VLC also supports a few services directly or via plugins.</p>
+  </item>
+  <item>
+    <title><code>💫 Keep all web links </code></title>
+    <p>Besides audio/video links, some subreddits link to album art or
+    are just news feeds. Enable the "keep all" option to retain them.
+    Such entries will open in your web browser instead of an audio player,
+    of course.</p>
+  </item>
+  </terms>
+
+ <note style="info"><p>To utilize Soundcloud links, there's an <link
+ xref="contrib_features">extra url_soundcloud plugin</link>. 
+ It overrides the <file>audio/soundcloud</file> player config, and
+ resolves such streams to MP3 urls (session typically times out
+ quickly, so no bookmarking/export possible etc).</p></note>
+
+</section>
+
+</page>

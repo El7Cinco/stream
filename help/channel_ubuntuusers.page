@@ -1,0 +1,27 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="ubuntuusersm">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+        <desc>Wiki list of radio stations</desc>
+</info>
+
+	<title><media type="image" src="img/channel_ubuntuusers.png" /> UbuntuUsers</title>
+	<subtitle><link	href="http://ubuntuusers.de/">//ubuntuusers.de/</link></subtitle>
+
+	<p>There's a manually curated list of radio stations in the
+	UbuntuUsers.de Wiki.</p>
+	
+        <list>
+          <item><p>Like the origin website, most entries are German or European stations.</p></item>
+          <item><p>So this is more of an example plugin, as it's not a huge list.</p></item>
+          <item><p>RegExp are used for extraction, because the Wiki markup is rather well-maintained and consistent.</p></item>
+        </list>
+
+	<note><p>There's also a small streaming TV list. But most entries
+	aren't really accessible (anymore) without command line tools. 
+	(Which that very Wiki page covers in detail.)</p></note>
+
+</page>

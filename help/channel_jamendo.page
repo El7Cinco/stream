@@ -1,0 +1,53 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="jamendo">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Creative Commons music and artist hub.</desc>
+</info>
+
+<title><media type="image" src="img/channel_jamendo.png"/> Jamendo</title>
+<subtitle><link href="http://jamendo.com/">//jamendo.com/</link></subtitle>
+
+<p>Jamendo is a Creative Commons licensing oriented music distributor. It
+hosts audio files for individual musicians and artists.  It allows to list
+albums, playlists, and individual tracks by genre.</p>
+
+<list>
+  <item><p>The new Jamendo v3.0 is now utilized, which is JSON based and easy to extract.</p></item>
+  <item><p>Its radio list is static. It loops over randomized songs from each genre.</p></item>
+  <item><p>There's a custom JSON playlist extractor (JAMJSON), to avoid preloading stream URLs for feeds/albums. While tracks/genre lists contain direct streaming addresses already.</p></item>
+  <item><p>Instead of favicons, streamtuner2 can fetch slightly larger album or track covers.</p></item>
+</list>
+
+<p>Tracks and albums can be downloaded free of charge (Creative Commons). Yeah, imagine that.</p>
+
+<section id="options">
+<title><link xref="configuration">Config</link> options</title>
+<terms>
+   <title>System</title>
+   <item>
+     <title>🔠 Streaming format</title>
+     <p>You can switch between MP3 and Ogg Vorbis audio streams for Jamendo.
+     It's not honored by the radio section, but albums and tracks should be
+     received as Ogg when configured so.</p>
+   </item>
+   <item>
+     <title>🔠 Preview image sizes</title>
+     <p>Album covers are downloaded in lieu of favicons. They're available
+     in different sizes. Use 25px if you want just favicon-sized icons.</p>
+   </item>
+   <item>
+     <title>🔟 Result length</title>
+     <p>Currently only 1 page (of 200 entries each) of album/track lists are
+     fetched.</p>
+     <note style="bug"><p>Setting a higher value may not work.</p></note>
+   </item>
+</terms>
+</section>
+
+
+</page>

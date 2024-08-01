@@ -1,0 +1,81 @@
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="pluginmanager2">
+  <info>
+    <link type="guide" xref="index#extra"/>
+    <link type="topic" xref="configuration#plugins"/>
+    <desc>User plugin installation</desc>
+  </info>
+
+	<title>Plugin Manager 2 - <key>📦 Add</key> </title>
+
+	<p>For updating or installing new plugins (extra channels or
+	features), there's a user plugin manager. It's available as
+	feature extension itself.</p>
+	
+	<steps>
+	 <item><p>See the <key>F12</key> config dialog <key>🔌 Feature</key> section.</p></item>
+	 <item><p>Enable the <key>⨯</key> Plugin Manager (listed near the end).</p></item>
+	 <item><p>Restart streamtuner2 one last time for this change to take effect.</p></item>
+	</steps>
+	
+	<p>Once activated it brings up a new <key>📦 Add</key> tab
+	in the configuration window.</p>
+	
+	<p><media type="image" src="img/pluginmanager2.png"
+	mime="image/png">Install dialog for user plugins</media></p>
+	
+	<p>You can scan for available/new plugins there. And have them
+	downloaded right away. New plugins are just downloaded, not
+	implictly enabled. Reopen the config dialog to see them in the
+	regular <key>📻 Channels</key> or <key>🔌 Feature</key> tabs, and
+	then enable them.</p>
+	
+	<note><p>Updated plugin versions won't be instantiated right away
+	if they've been active already. That requires either a restart.
+	Or disabling + saving once, then reenabling them.</p></note>
+	
+	<section id="configuration">
+	<title>Configuration</title>
+	<list>
+	<item><p>Alternative download repositories may be configured. (Little
+	practical value at the moment.)</p></item>
+	<item><p>And you can let the plugin manager handle ☑ autoactivation
+	of changed plugin states.</p>
+	  <list>
+	  <item><p>After reconfiguring existing channel plugins, they get
+   	  automatically instantiated or disabled in the user interface.
+   	  (Which avoids the usual restart).</p></item>
+	  <item><p>This currently doesn't work with feature/core
+   	  plugins. Plugin deactivation is mostly visual, but does not undo
+   	  menu extensions or undefine callback hooks.</p></item>
+     	  </list>
+     	</item>
+   	</list>
+	</section>
+
+	<section id="userplugins">
+	<title>User plugins</title>
+	<p>Downloaded plugins are stored in <file>~/.config/streamtuner2/plugins/</file>
+	(not in <file>~/.cache</file>, because they're sort of configuration
+	and should be backed up in case of local modifications).
+	To remove them, delete the individual *.py files there manually. But
+	keep the <file>__init__.py</file> stub.</p>
+	<p>On Windows they're stored in <file>%APPDATA%\streamtuner2\plugins\</file>.</p>
+	<note style="bug"><p>Core plugins (those which are installed
+	system-wide) can often also be updated. The user-saved plugin will
+	take precedence after a restart. However the version number in
+	PluginManager2 still shows the system-installed/older version
+	regardless.</p>
+	<p>So you'll have to take care to eventually refresh/delete outdated user plugins,
+	whenever you install a newer Streamtuner2 version.</p></note>
+	</section>
+	
+	<section id="disable">
+	<subtitle>Disable user plugin loading</subtitle>
+	<p>Since this is still rather experimental, you may disable all
+	associated features by starting ST2 via:</p>
+	<screen>streamtuner2 -d <input>pluginmanager2</input></screen>
+	<p>Which inhibits loading this whole extension. (The <code>-d</code>
+	flag also works	for any other plugin name.)</p>
+	</section>
+
+</page>

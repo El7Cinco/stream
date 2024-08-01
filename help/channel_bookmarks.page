@@ -1,0 +1,50 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="bookmarks">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="streams#actions"/>
+        <desc>Collect favourites via bookmark function, entry editing and deleting.</desc>
+</info>
+
+	<title>Bookmarks</title>
+
+	<p>Streamtuner2 allows to bookmark favourite streams/stations.</p>
+
+        <list>
+         <item><p>Use right click for a stations <guiseq><gui>context menu</gui> <gui>bookmark</gui></guiseq></p></item>
+         <item><p>Or just press <key>F8</key> on a selected radio.</p></item>
+         <item><p>Else use the main menu <guiseq><gui>Station</gui> <gui>bookmark</gui></guiseq></p></item>
+        </list>
+
+        <p>Once bookmarked the station is listed under <guiseq><gui
+        style="menu"><key>bookmarks</key></gui> <gui><key>favourite</key></gui></guiseq>.</p>
+
+        <p>Additionally every appearance of the station in other channel
+        tabs gets a ★ star icon.</p>
+
+	<section id="editing">
+	<title>Editing</title>
+        <p>Entries can be removed from the bookmark list again. Use
+        <guiseq><gui>Edit</gui> <gui>Delete</gui></guiseq> or the <key>DEL</key>
+	key for that.</p>
+
+        <p>You can also manually adapt an entry via <guiseq><gui>Station</gui> <gui>Edit</gui></guiseq>
+        or by pressing <key>F3</key>.
+	</p>
+
+	</section>
+
+	<section id="other">
+	<title>Subcategories</title>
+	<p>The bookmarks tab can display other categories besides "favourite". For example the
+	search feature creates a "search", while the "timer" and "links" plugins also display
+	lists here.</p>
+	<note style="bug"><p>There's a <link xref="contrib_features#new_favourite">feature plugin</link>
+        to provide for favourite subcategories. You'd usually move items there per <link
+	xref="dragndrop">drag'n'drop</link>. It's somewhat of a workaround, however.</p></note>
+	</section>
+
+</page>

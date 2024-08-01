@@ -1,0 +1,30 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="homepage">
+
+	<info>
+	<link type="guide" xref="index#functions"/>
+	<desc>Start a web browser for a station.</desc>
+	<link type="guide" xref="streams#actions"/>
+	</info>
+
+	<title>Radio homepages</title>
+
+	<p>Most radio stations are listed with a homepage URL. Use the <gui
+	style="button"><key>🏠</key> house</gui> symbol in the toolbar or
+	<guiseq><gui>right click</gui> <gui>homepage</gui></guiseq> to open
+	it in a web browser.</p>
+
+        <p>Some homepage links are guessed, because some channels (e.g.
+	Shoutcast) don't provide them (anymore).  If you play a station
+	without homepage URL, it automatically gets googled.  (The link will
+	be visible once you reselect the genre/category.) </p>
+
+	<section>
+	<title>Channel homepages</title>
+	<p>You can also visit channel homepages (Shoutcast.com, Xiph.org,
+	etc).  Either from the <gui>Channel</gui> menu, or via double
+	clicking the channel tab.</p>
+	</section>
+
+</page>

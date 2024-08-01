@@ -1,0 +1,32 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="filtermusic">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+        <desc>Selection of the best radio stations</desc>
+</info>
+
+	<title><media type="image" src="img/channel_filtermusic.png" /> filtermusic</title>
+        <subtitle><link href="http://filtermusic.net/">//filtermusic.net/</link></subtitle>
+
+	<p>Filtermusic summarizes all the common genres, but is primarily
+	focused on electro/dance/pop stations.</p>
+
+        <list>
+         <item><p>There's around a dozen categories with 20-30 radios each.</p></item>
+         <item><p>Prioritizes stations on listener popularity and freshness or something.</p></item>
+         <item><p>The plugin fetches an XML list of stations, or extracts from the homepage.</p></item>
+        </list>
+
+	<p>Most useful if you don't like to browse around, and want to
+	listen to most popular stations.</p>
+
+        <section id="options">	
+        <title>Configuration</title>
+	<p>No longer offers alternative fetch modes (the XML station blob is
+        gone).</p>
+	</section>
+
+</page>

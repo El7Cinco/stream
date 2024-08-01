@@ -1,0 +1,55 @@
+<!--
+# title: streamtuner2 mallard help pages
+# pack: *.page=../../doc/streamtuner2/help/, img=../../doc/streamtuner2/help/
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="index">
+
+	<info>
+	<title>Streamtuner2 </title>
+	<credit type="author"><name>Mario Salzer</name></credit>
+        <desc>Internet radio station browser</desc>
+        <revision pkgversion="2.2.0" version="2.2.0"/>
+	</info>
+
+	<title><media type="image" mime="image/png" src="img/logo.png">♪</media> Streamtuner2 </title>
+        
+	<p>Streamtuner2 shows internet radio stations for easy browsing, playing, recording.</p>
+
+	<section id="browsing" style="2column">
+            <title>Browsing channels and radio stations</title>
+    	</section>
+
+	<section id="channels" style="2column">
+            <title>Channel tabs</title>
+    	</section>
+
+	<section id="functions" style="2column">
+            <title>Functions</title>
+    	</section>
+
+	<section id="extra" style="2column">
+            <title>Additional features</title>
+    	</section>
+
+	<section id="footer">
+	<subtitle>Project resources and additional help</subtitle>
+	<list>
+	  <item><p>You can get additional help from the
+   	  <link href="http://sourceforge.net/p/streamtuner2/discussion/1173108/">online forum</link>.
+   	  Or via <guiseq><gui>Help</gui> <gui>Forum</gui></guiseq>.</p></item>
+
+	  <item><p>Feedback on issues you ran into is also very welcome.
+	  <link href="http://fossil.include-once.org/streamtuner2/rptview?rn=1">Bug reports</link>
+	  don't require any account registration. But please include -D debug output.
+	  Also accessible via <guiseq><gui>Help</gui> <gui>Wiki/Fossil/Bugs</gui></guiseq>.</p></item>
+
+	  <item><p>Watch for new project releases on
+	  <link href="http://freshcode.club/projects/streamtuner2">freshcode.club</link></p></item>
+
+   	</list>
+
+	<p>This manual was last updated for available functions in streamtuner2
+	version 2.2.2, as of Feb 2022.</p>
+	</section>
+
+</page>

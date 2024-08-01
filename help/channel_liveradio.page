@@ -1,0 +1,48 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="liveradio">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Ireland-based radio directory</desc>
+</info>
+
+<title><media type="image" src="img/channel_liveradio.png"/> LiveRadio.ie</title>
+<subtitle><link href="http://liveradio.ie/">//liveradio.ie/</link></subtitle>
+
+<p>LiveRadio.ie is a station directory from Irish radio enthusiasts. It's
+going pretty strong with over 4500 entries and a neat UI. It obviously also
+lists international stations. </p>
+
+<p>It doesn't have an API in itself, but utilizes HTML5 microdata. And
+the station logos are utilized directly in ST2 as favicons.</p>
+
+
+<section id="options">
+ <title>Configuration</title>
+  <terms>
+  <item>
+    <title><code>🔠 Website to fetch from</code></title>
+    <p> This option allows for querying LiveRadio.UK instead. This requires
+    a Streamtuner2 restart however, and might not be reflected in the
+    channel tabs (though is in the toolbar link). </p>
+  </item>
+  <item>
+    <title>✕ Missing options</title>
+    <p> Future version might allow to set a language filter. Currently
+    there's too little content to warrant it. </p>
+  </item>
+  <item>
+    <title>❏ General options</title>
+    <p> Responds to the PyQuery (instead of regex) parsing main option. </p>
+    <p> Per default fetches 10 pages at once. </p>
+  </item>
+  </terms>
+
+ 
+
+</section>
+
+</page>

@@ -1,0 +1,40 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="streams">
+
+<info>
+	<link type="guide" xref="index#browsing"/>
+	<link type="seealso" xref="index#functions"/>
+        <desc>Radio streams lists, station information columns, entry actions.</desc>
+</info>
+
+	<title>Streams / Stations</title>
+
+	<p>Radio stations are listed in the right pane. Usually they have a title and a
+        description. The description is often the last played song. (This isn't updated
+        automatically to conserve bandwidth and because live information is seldomly available.)</p>
+
+	<media type="image" mime="image/png" src="img/streams.png">Station list</media>
+
+        <p>You can double click a station line to get it to play. Alternatively there are the
+        play and record buttons in the menubar. You can also invoke a stations homepage, if it
+        has one.</p>
+
+<section id="actions">
+	<title>Actions</title>
+</section>
+
+<section>
+	<title>Context menu</title>
+
+        <p>Additionally most actions are available in a context menu. Right click
+        a station entry to display it.</p>
+
+	<media type="image" mime="image/png" src="img/streamactions.png">Station list</media>
+
+        <p>You can reach them in the <guiseq><gui>Main menu</gui> <gui>Stations</gui></guiseq>
+        as well. The <guiseq><gui>Extensions</gui> <gui></gui></guiseq> submenu there will
+        list a few other plugin extensions.</p>
+</section>
+
+</page>

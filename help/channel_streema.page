@@ -1,0 +1,32 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="streema">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Online radio directory</desc>
+</info>
+
+<title><media type="image" src="img/channel_streema.png" /> Streema</title>
+<subtitle><link href="http://www.streema.com/">//streema.com/</link></subtitle>
+
+<p>
+Streema lists over 70000 radio stations. Requires a double lookup
+however, as stream addresses are embedded in the web player only.
+Channel only polls one page of results, skips external stream pages.
+</p>
+
+<p>
+Currently playing field is quite spotty. No homepages are listed.
+The category map is prepared here, because it's quite slow to
+update. Region/city categories are left unused.
+</p>
+
+<p>
+The server search function is implemented however.
+</p>
+
+
+</page>

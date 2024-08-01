@@ -1,0 +1,68 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="radiobrowser">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Community-driven streaming directory</desc>
+</info>
+
+<title><media type="image" src="img/channel_radiobrowser.png"/> Radio-Browser</title>
+<subtitle><link href="http://radio-browser.info/">//radio-browser.info/</link></subtitle>
+
+<p>Radio-Browser is an ambitious community project. It collects as many
+public internet radio stations as possible. It's free to use, has a well
+documented API, with a simple JSON interface.</p>
+
+<p>It's now the backend in many open source music players:</p>
+
+<list>
+  <item><p>Rhythmbox (for which it was originally intended)</p></item>
+  <item><p>Streamtuner2 (obviously)</p></item>
+  <item><p>RadioDroid (Android)</p></item>
+  <item><p>DreamBox plugin</p></item>
+  <item><p>Musicbox (Android)</p></item>
+  <item><p>Gradio</p></item>
+  <item><p>Kodi/XBMC</p></item>
+</list>
+
+<p>Since v0.3 (in streamtuner2 2.2.0) you can now also share your favorite
+stations directly. There's a new <guiseq><gui>context menu</gui> <gui>Share in
+Radio-Browser</gui></guiseq>.</p>
+
+<section id="options">
+ <title>Configuration</title>
+  <terms>
+  <item>
+    <title><code>🔠 Which category types to list</code></title>
+    <p> Instead of browsing by genres, you can switch to languages or
+    countries.</p>
+    <p> Note that you'll have to use <guiseq><gui>Channel</gui> <gui>Reload Category Tree (F5)</gui></guiseq>
+    again to update the category view.</p>
+  </item>
+  <item>
+    <title><code>🔠 API server to utilize</code></title>
+    <p> The API server option lets you predefine a more local cache to be used
+    for station list queries.</p>
+  </item>
+  <item>
+    <title><code>🔟 Minimum stations to list a category</code></title>
+    <p> This option can be used to filter out fringe/sparsely populated
+    genres. Use <guiseq><gui>Channel</gui>  <gui>Reload Category Tree (F5)</gui></guiseq>
+    to apply it to the genre list.</p>
+    <p> Typically 15 should be okay, or 150 if you want to see only major categories.
+    Else the category list would become crowded with around a thousand entries.</p>
+  </item>
+  </terms>
+</section>
+
+<section id="advertisment">
+ <note style="note"><p> With <link  href="https://play.google.com/store/apps/details?id=net.programmierecke.radiodroid2">RadioDroid</link>
+ there's a mobile version to access and play from radio-browser.info
+ directly. Get it on <link  href="https://f-droid.org/forums/topic/radiodroid/">F-Droid</link>
+ or the Play store.</p></note>
+</section>
+
+</page>

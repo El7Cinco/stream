@@ -1,0 +1,36 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="internet_radio_org_uk">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+	<link type="guide" xref="configuration#plugins"/>
+        <desc>Large radio directory from the UK.</desc>
+</info>
+
+	<title><media type="image" src="img/channel_internet_radio.png" /> Internet-Radio</title>
+        <subtitle><link href="http://internet-radio.com/">//internet-radio.com/</link></subtitle>
+        
+	<p>Internet-Radio.com is a broad alternative to Shoutcast.</p>
+
+	<list>
+ 	 <item><p>It has regained station homepages for most entries again.</p></item>
+ 	 <item><p>Genres are similiar to Shoutcast.</p></item>
+ 	 <item><p>Updating station lists is comparatively fast.</p></item>
+ 	 <item><p>Uses HTML extraction (regex or pyquery) internally.</p></item>
+ 	</list>
+
+        <section id="options">
+        <title>Configuration</title>
+	<list>
+ 	 <item>
+ 	 <title>🔟 pages to fetch</title>
+         <p>Note that this plugin has its own setting on how many
+         links to retrieve.  Instead of stream numbers, it only counts pages.
+         Which is because this directly influences the stream loading time.</p>
+ 	 </item>
+ 	</list>
+	</section>
+
+</page>

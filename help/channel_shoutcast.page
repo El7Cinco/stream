@@ -1,0 +1,30 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="shoutcast">
+
+<info>
+	<link type="guide" xref="index#channels"/>
+	<link type="guide" xref="channels#list"/>
+        <desc>Probably still the largest radio station list.</desc>
+</info>
+
+	<title><media type="image" src="img/channel_shoutcast.png" /> Shoutcast</title>
+	<subtitle><link	href="http://shoutcast.com/">//shoutcast.com/</link></subtitle>
+
+	<p>SHOUTcast is the name of a MP3 streaming server software. It automatically collects all
+	station lists on shoutcast.com.
+        </p>
+
+        <list>
+		<item><p>Station entries usually provide current playing information.</p></item>
+		<item><p>Stream links are plain <link xref="filetypes#pls">PLS files</link>.</p></item>
+		<item><p>Genres are subcategorized, so the main groups in the category
+		list must be expanded to see the interesting entries.</p></item>
+        </list>
+
+        <p>Since being sold from AOL to Radionomy, the directory got cut down. There are no longer
+        entries for currently played songs, and homepage links are largely gone. Hencewhy the
+        Shoutcast channel is no longer considered a primary feature.</p>
+
+
+</page>

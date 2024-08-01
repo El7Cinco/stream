@@ -1,0 +1,94 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="cli">
+
+<info>
+	<link type="guide" xref="index#extra"/>
+        <desc>Console interface, exporting data.</desc>
+</info>
+
+	<title>CLI (command line interface)</title>
+
+	<p>Streamtuner2 is a graphical tool. But it also has a limited commandline interface,
+	which can be used to query station information. This is useful for interfacing with
+	other applications.</p>
+
+        <p>Open a terminal and call <code>streamtuner2 help</code> to get an overview over
+	available commands.</p>
+
+
+        <terms>
+          <title>Examples</title>
+          <item>
+            <title><code>streamtuner2 play "station"</code></title>
+            <p>This command looks through all channel plugins, and finds a station containing the
+	    mentioned title. You must put the station title in quotes in shell calls, if it contains
+	    e.g. spaces. You can optionally specify a channel name before the station title.</p>
+          </item>
+          <item>
+            <title><code>streamtuner2 url [channel] "station"</code></title>
+            <p>Just looks up the streaming URL for a given station. If no channel name is given,
+		ST2 searches through all available channel plugins again.</p>
+          </item>
+          <item>
+            <title><code>streamtuner2 stream shoutcast "station"</code></title>
+            <p>Prints available station data as JSON</p>
+          </item>
+          <item>
+            <title><code>streamtuner2 category internet_radio_org_uk "Pop"</code></title>
+            <p>Loads fresh data from the specified channel service, and prints out JSON data for
+		the whole category. Note that the category name must have the excact case.</p>
+          </item>
+          <item>
+            <title><code>streamtuner2 categories channel</code></title>
+            <p>Fetches the current list of available categories/genres for a channel service.</p>
+          </item>
+        </terms>
+
+	<p>Specifying a channel name is often optional. If you add one, it should be all-lowercase.
+	You can also give a list, like "shoutcast,xiph" which would be searched then.</p>
+
+        <section>
+        <title>GUI options</title>
+	<p>There are also a few command line flags, which influence the
+        graphical runtime.</p>
+        <list>
+          <item>
+            <title>--gtk3</title>
+            <p>Picks the Gtk3 toolkit. Which is default for Python3 runs.
+            But could also be used for Python2 instead of pygtk.</p>
+          </item>
+          <item>
+            <title>--gtk2</title>
+            <p>Fake option. Python2 runs on Gtk2 per default. And Py3 is
+            bound to Gtk3/PyGObject anyway.</p>
+          </item>
+          <item>
+            <title>-D</title>
+            <p>Enable debug output on the console. Identical to the debug
+            configuration dialog option.</p>
+          </item>
+          <item>
+            <title>-d plugin</title>
+            <p>Disable a named plugin. Useful if it hangs on startup. So
+            <cmd>-d xiph</cmd> can temporarily disable it. Note that this
+            flag gets set durably by clicking [save] in the config
+            dialog.</p>
+          </item>
+          <item>
+            <title>-e plugin</title>
+            <p>Enable a channel/feature plugin just once.</p>
+          </item>
+          <item>
+            <title>-h</title>
+            <p>Print help list with all known command line flags. Note that
+            this excludes details on the CLI action commands.</p>
+          </item>
+          <item>
+            <title>-x</title>
+            <p>Exit right away. A flag only used for testing.</p>
+          </item>
+        </list>
+	</section>
+
+</page>

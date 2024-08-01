@@ -1,0 +1,61 @@
+<page	xmlns="http://projectmallard.org/1.0/"
+	type="guide"
+	id="search">
+
+<info>
+	<link type="guide" xref="bookmarks#other"/>
+	<link type="guide" xref="index#functions"/>
+        <desc>Quicksearch field and Ctrl+F compound search window.</desc>
+</info>
+
+	<title>Searching</title>
+
+	<p>There are two search functions.</p>
+
+
+	<section id="quicksearch">
+	<title>Quick search</title>
+        <p>Just enter text into the quick search box atop. Streamtuner2 will instantly highlight
+	any matches in the current stations view. If you switch tabs, just click the glass icon
+	to reapply the highlighting.</p>
+	</section>
+
+	<section id="cachesearch">
+	<title>Search window</title>
+
+	<p>You can get to the search dialog via <guiseq><gui>Edit</gui>
+	<gui>Find</gui></guiseq> or <key>Ctrl</key>+<key>F</key>.  Centrally
+	to this dialog is a text field, where you can specify the phrase
+	to scan for.</p>
+
+	<media src="img/search.png" type="image" mime="image/png" />
+
+        <p>It either will search in:</p>
+        <list>
+          <item><p><gui>☐ all channels</gui></p></item>
+          <item><p><gui>☒ last active channel/service.</gui>
+                (You therefore want to switch channel tabs before
+                invoking this search mode.)</p></item>
+        </list>
+
+	<p>Then there are two search variants:</p>
+	<list>
+	<item>
+	 <title><key>Server search</key></title>
+	 <p>You mostly want to use the live <gui>server search</gui>.  It
+	 passes your search terms to the actual directory services, and
+	 loads the most recent data into a result list.</p><p>This might take
+         a few seconds.  And it's not implemented for all channel plugins. 
+	 (Some websites/APIs don't have a search.)</p>
+	</item>
+	<item>
+	 <title><key>Cache find</key></title>
+	 <p>While <gui>cache find</gui> would just look up entries in your
+         already downloaded channel/genre lists.  This is sufficient when
+         you're just looking for something previously seen/listened to.</p>
+        </item>
+        </list>
+
+	</section>
+
+</page>

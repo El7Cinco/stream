@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Plugin Manager 2 - 📦 Add </title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation"><div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » </div></div></div></header><article><div class="hgroup pagewide"><h1 class="title"><span class="title">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </span></h1></div>
+<div class="region">
+<div class="contents pagewide">
+<p class="p">For updating or installing new plugins (extra channels or
+	features), there's a user plugin manager. It's available as
+	feature extension itself.</p>
+<div class="steps"><div class="inner"><div class="region"><ol class="steps">
+<li class="steps"><p class="p">See the <span class="key"><kbd>F12</kbd></span> config dialog <span class="key"><kbd>🔌 Feature</kbd></span> section.</p></li>
+<li class="steps"><p class="p">Enable the <span class="key"><kbd>⨯</kbd></span> Plugin Manager (listed near the end).</p></li>
+<li class="steps"><p class="p">Restart streamtuner2 one last time for this change to take effect.</p></li>
+</ol></div></div></div>
+<p class="p">Once activated it brings up a new <span class="key"><kbd>📦 Add</kbd></span> tab
+	in the configuration window.</p>
+<p class="p"><span class="media"><span class="media media-image"><img src="img/pluginmanager2.png" class="media media-inline" alt="Install dialog for user plugins"></span></span></p>
+<p class="p">You can scan for available/new plugins there. And have them
+	downloaded right away. New plugins are just downloaded, not
+	implictly enabled. Reopen the config dialog to see them in the
+	regular <span class="key"><kbd>📻 Channels</kbd></span> or <span class="key"><kbd>🔌 Feature</kbd></span> tabs, and
+	then enable them.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Updated plugin versions won't be instantiated right away
+	if they've been active already. That requires either a restart.
+	Or disabling + saving once, then reenabling them.</p></div></div></div>
+</div>
+<div class="links topiclinks"><div class="inner"><div class="region"><div class="links-divs">
+<div class="linkdiv "><a class="linkdiv" href="configuration.html#plugins" title="Channel and feature plugins and settings"><span class="title">Channel and feature plugins and settings</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="contrib_channels.html" title="→ Contrib/Extra Channels"><span class="title">→ Contrib/Extra Channels</span><span class="linkdiv-dash"> — </span><span class="desc">Downloadable channel plugins</span></a></div>
+<div class="linkdiv "><a class="linkdiv" href="contrib_features.html" title="→ Feature plugins"><span class="title">→ Feature plugins</span><span class="linkdiv-dash"> — </span><span class="desc">Additional feature plugins</span></a></div>
+</div></div></div></div>
+</div>
+<section id="configuration"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Configuration</span></h2></div>
+<div class="region"><div class="contents pagewide"><div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">Alternative download repositories may be configured. (Little
+	practical value at the moment.)</p></li>
+<li class="list">
+<p class="p">And you can let the plugin manager handle ☑ autoactivation
+	of changed plugin states.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">After reconfiguring existing channel plugins, they get
+   	  automatically instantiated or disabled in the user interface.
+   	  (Which avoids the usual restart).</p></li>
+<li class="list"><p class="p">This currently doesn't work with feature/core
+   	  plugins. Plugin deactivation is mostly visual, but does not undo
+   	  menu extensions or undefine callback hooks.</p></li>
+</ul></div></div></div>
+</li>
+</ul></div></div></div></div></div>
+</div></section><section id="userplugins"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">User plugins</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Downloaded plugins are stored in <span class="file">~/.config/streamtuner2/plugins/</span>
+	(not in <span class="file">~/.cache</span>, because they're sort of configuration
+	and should be backed up in case of local modifications).
+	To remove them, delete the individual *.py files there manually. But
+	keep the <span class="file">__init__.py</span> stub.</p>
+<p class="p">On Windows they're stored in <span class="file">%APPDATA%\streamtuner2\plugins\</span>.</p>
+<div class="note note-bug" title="Bug">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m7 8v7h0.0078a5 6.3027 0 0 0 3.9922 5.867v-6.867h2v6.871a5 6.3027 0 0 0 3.988-5.871h0.012v-7h-10z"></path>
+ <path class="yelp-svg-fill" d="m12 3a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4z"></path>
+ <path class="yelp-svg-fill" d="m16 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m9.2045 16.361h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m21.704 4.2894h6v1h-6z"></path>
+ <path class="yelp-svg-fill" d="m2 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m5.5801 4.3612h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m-6.9199 16.289h6v1h-6z"></path>
+</svg><div class="inner"><div class="region"><div class="contents">
+<p class="p">Core plugins (those which are installed
+	system-wide) can often also be updated. The user-saved plugin will
+	take precedence after a restart. However the version number in
+	PluginManager2 still shows the system-installed/older version
+	regardless.</p>
+<p class="p">So you'll have to take care to eventually refresh/delete outdated user plugins,
+	whenever you install a newer Streamtuner2 version.</p>
+</div></div></div>
+</div>
+</div></div>
+</div></section><section id="disable"><div class="inner">
+<div class="hgroup pagewide"><h3 class="subtitle"><span class="subtitle">Disable user plugin loading</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Since this is still rather experimental, you may disable all
+	associated features by starting ST2 via:</p>
+<div class="screen"><pre class="contents"><code>streamtuner2 -d <span class="input">pluginmanager2</span></code></pre></div>
+<p class="p">Which inhibits loading this whole extension. (The <span class="code">-d</span>
+	flag also works	for any other plugin name.)</p>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul><li class="links "><a href="index.html#extra" title="Additional features">Additional features</a></li></ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

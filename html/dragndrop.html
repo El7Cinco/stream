@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Drag'n'drop</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation"><div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » </div></div></div></header><article><div class="hgroup pagewide"><h1 class="title"><span class="title">Drag'n'drop</span></h1></div>
+<div class="region">
+<div class="contents pagewide">
+<p class="p">With the DND feature plugin enabled, there's an even simpler
+	method now to export stations.  Simply click and hold the mouse on a
+	stream entry, then drag it out to the desktop, file manager or
+	directly into VLC or any running music player.  That'll usually
+	copy a stream/station address directly.</p>
+<p class="p">Now it's not guaranteed to work with all applications or file
+	managers, as X11/Gtk DND support is somewhat arcane and wonky.
+	You may specifically have to adapt the default export format for
+	this. Generally an XSPF or PLS file gets created for file managers.
+	While VLC is one of the few applications that understands direct
+	playlist URLs or literal M3U/PLS payloads even.</p>
+</div>
+<section id="import"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Importing</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Playlist importing also works mostly. Here the action module
+	takes care to unpack PLS, XPSF or M3U files and a few other
+	formats. If you drag in streams/playlists from other applications,
+	it'll usually be expanded.</p>
+<div class="note note-warning" title="Warning">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m11.92 3.3047a1.3872 1.3872 0 0 0-1.129 0.6933l-8.6055 14.922a1.3872 1.3872 0 0 0 1.2012 2.08l17.226-8e-3a1.3872 1.3872 0 0 0 1.201-2.08l-8.619-14.916a1.3872 1.3872 0 0 0-1.136-0.6913 1.3872 1.3872 0 0 0-0.139 0zm0.08 4.6953a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1 1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1zm0 9a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Take note that Streamtuner2 is not intended as playlist manager
+	though. It will only accept radio streaming lists and discard
+	local MP3/Ogg files.</p></div></div></div>
+</div>
+<p class="p">The import capabilities also allow to move a station entry
+	from one of the channel tabs into your bookmarks list. Simply drag
+	an entry over the "bookmarks" notebook tab then further along into
+	the favourite list. - While this also works the other way round,
+	it doesn't make sense to add bookmarks to Shoutcast/Xiph/etc.
+	Because when their lists get refreshed (<span class="key"><kbd>F5</kbd></span>) all custom
+	entries are usually dropped.</p>
+</div></div>
+</div></section><section id="configuration"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Export format configuration</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Use <span class="key"><kbd>F12</kbd></span> and change the DND export format. Again
+	PLS is most universal, XSPF most complete, but other formats
+	still available. Use the "desktop" format only if you want to
+	bookmark direct playback links on your desktop.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">This is a workaround, because XDND is commonly just implemented
+	as dumb file transfer scheme. Hardly any application specifies the
+	actually desired formats, thus there's no auto-negotiation. ST2
+	therefore has to create temporary export files and hope for the
+	best.</p></div></div></div>
+</div>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul><li class="links "><a href="index.html#extra" title="Additional features">Additional features</a></li></ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

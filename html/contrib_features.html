@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>→ Feature plugins</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » <a class="trail" href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » <a class="trail" href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </a> » <a class="trail" href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a> » </div>
+</div></div></header><article><div class="hgroup pagewide"><h1 class="title"><span class="title">→ Feature plugins</span></h1></div>
+<div class="region">
+<div class="contents pagewide"></div>
+<section id=""><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title"><span class="key"><kbd>🔌 Feature</kbd></span> plugins and settings</span></h2></div>
+<div class="region">
+<div class="contents pagewide"><p class="p">Extra functionality and behaviour changes are available in
+the <span class="key"><kbd>🔌 Feature</kbd></span> <span class="link"><a href="configuration.html" title="Configuration / Settings dialog">configuration</a></span>
+section.</p></div>
+<section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 Filter Bitrate</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Some channels provide lower-quality audio streams. In particular
+  Xiph lists some awful radio stations. And this plugin helps filtering
+  those out of station lists.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">MP3 streams often start to sound okay at 96kbit/s.</p></li>
+<li class="list"><p class="p">Whereas OGG Vorbis or AAC are sometimes acceptable at 64kbit/s already.</p></li>
+</ul></div></div></div>
+<p class="p">Note that you may end up with empty channel lists
+  altogether if you set these options too high. Some channels provide all
+  their streams with 64kbit/s only.</p>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 Channel toolbar link</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Adds a toolbar entry which shows the current channel/directory
+  service title and its homepage link. Such as:</p>
+<div class="code"><pre class="contents"><code><span class="span">    ▶    ●    🏠     Shoutcast</span>
+  play rcrd  hmpg   <span class="link"><a href="http://shoutcast.com/" title="http://shoutcast.com/">//shoutcast.com/</a></span>
+  </code></pre></div>
+<p class="p">It depends on the "update window title" option being enabled.</p>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 Export all stations</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">There's an "Export All" plugin available. It adds an entry under
+  <span class="guiseq"><span class="gui">Main menu</span> ▸ <span class="gui">Extensions</span> ▸ <span class="gui">Export all stations</span></span>.
+  Which allows to export all stations from the currently visible channel category.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">This is of course intended primarily for saving your bookmarks.</p></li>
+<li class="list"><p class="p">And it allows to import radio lists into any other music player  or playlist collection/management app (such as Rhythmbox).</p></li>
+<li class="list"><p class="p">You can set the desired playlist format in the file saving dialog that pops up.</p></li>
+</ul></div></div></div>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 RadioTray hook</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">This plugin enables an extra category in the <span class="key"><kbd>bookmarks</kbd></span> tab.
+  It shows bookmarked stations from the RadioTray application, if that's
+  installed. Additionally it adds a context option to save new stations
+  from Streamtuner2 to RadioTray. The mapping option influences if added
+  radios are recategorized in RadioTray.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p"> Please see the Wiki for further <span class="link"><a href="http://fossil.include-once.org/streamtuner2/wiki/radiotray" title="http://fossil.include-once.org/streamtuner2/wiki/radiotray">setup instructions</a></span>.</p></div></div></div>
+</div>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 User Agent Switcher</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">This plugin merely masks Streamtuner2 as an ordinary web browser when retrieving station lists.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"> It's technically unneeded, as ST2 isn't stressful to directory websites and not blocked anywhere. </p></li>
+<li class="list"><p class="p">It's only useful as additional privacy feature really, but shouldn't be used habitually. </p></li>
+</ul></div></div></div>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 History</span></h3></div>
+<div class="region"><div class="contents pagewide"><p class="p">Provides the small "history" category in the bookmarks tab. The length of
+  which is configurable (defaults to 20).</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 Links to directory services</span></h3></div>
+<div class="region"><div class="contents pagewide"><p class="p">Adds a list of weblinks to other online music services in the "links" category
+  within the bookmarks tab.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h3 class="title"><span class="title">🔌 Recording options</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Overrides the <span class="gui"><span class="key"><kbd>●</kbd></span> record</span> button to
+  not start streamripper right away. Instead it prompts for additional
+  settings before proceeding.</p>
+<p class="p">Common options are conveniently listed and saveable on a per-station
+  basis. Which allows to suppress stream splitting (record just one long
+  MP3 file), or file naming schemes.</p>
+<p class="p">Additionally it supports options of following recording backends:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="app">streamrippper</span> - for radio stations</p></li>
+<li class="list"><p class="p"><span class="app">fPls/fIcy</span> - for radio stations</p></li>
+<li class="list"><p class="p"><span class="app">youtube-dl</span> - video downloads</p></li>
+<li class="list"><p class="p"><span class="app">wget</span> - plain MOD/ZIP files</p></li>
+</ul></div></div></div>
+<p class="p">The plugin provides config options of its own, such as a default
+  output directory, or how many / how detailed options to show.</p>
+</div></div>
+</div></section>
+</div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Core feature plugins</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Following plugins are covered more in-depth in the according manual
+ sections:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="link"><a href="dragndrop.html" title="Drag'n'drop">🔌 Drag and Drop</a></span></p></li>
+<li class="list"><p class="p"><span class="link"><a href="favicon.html" title="Station favicons">🔌 Favicons</a></span></p></li>
+<li class="list"><p class="p"><span class="link"><a href="global_key.html" title="Global_key">🔌 Global key shortcut</a></span></p></li>
+<li class="list"><p class="p"><span class="link"><a href="timer.html" title="Timer">🔌 Timer</a></span></p></li>
+<li class="list"><p class="p"><span class="link"><a href="specbuttons.html" title="Special extra/mini buttons">🔌 Specbuttons</a></span></p></li>
+</ul></div></div></div>
+<p class="p">The "<span class="link"><a href="search.html" title="Searching">search</a></span>",
+ "<span class="link"><a href="configuration.html" title="Configuration / Settings dialog">configwin</a></span>" and
+ "<span class="link"><a href="edit.html" title="Edit">streamedit</a></span>" plugins are considered
+ built-ins and cannot be disabled.</p>
+</div></div>
+</div></section><section id="contrib"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Downloadable contrib/ feature plugins</span></h2></div>
+<div class="region">
+<div class="contents pagewide"><p class="p">The <span class="link"><a href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager</a></span> lists more
+downloadable feature plugins in the <span class="key"><kbd>📦 Add</kbd></span> tab.</p></div>
+<section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 Soundcloud streaming</span></h4></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Enables playback of soundcloud.com links, which are only used
+    in the <span class="link"><a href="channel_reddit.html" title="channel_reddit">📻 Reddit</a></span> plugin currently.
+    Homepage links are transformed into direct MP3 streaming addresses
+    on playback.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Depends on python-soundcloud, which you can install per
+    <span class="cmd">pip install soundcloud</span>.</p></div></div></div>
+</div>
+<p class="p"> Alternatively you could configure an external player like <span class="link"><a href="http://github.com/rekado/soundCLI" title="http://github.com/rekado/soundCLI">soundcli</a></span> of course.
+    Use the pseudo type "audio/soundcloud" for the player settings table.</p>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 dev_faulthandler</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">This is a pure development plugin, meant to debug ST2 crashes.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 bookmarks_show_extra</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Is a slim UI adaption to show the `extra` field in the bookmarks
+    channel. This field can contain user comments, but is used per default
+    to store the originating channel in.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 new_station</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">(Still unfinished). Small plugin to provide an "Add station..."
+    menu entry. Note that ST2 is not meant as playlist manager, which is
+    why this isn't a built-in feature. However, it's oft-requested anyway.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 tmp_clean_multiurl</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Strips extra space-separate URLs from station list. (Currently only
+    required for 📻 RadioSure channel. Later ST2 versions will likely support
+    such entries per default again).</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 Gtk theme setting</span></h4></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">You can set a custom theme for Streamtuner2 using the gtk_theme
+    plugin. It ought to list all available themes for Gtk2 or Gtk3 in
+    the according dropdown box. The "apply instantly" option may help
+    with enabling them right away.</p>
+<div class="note note-bug" title="Bug">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m7 8v7h0.0078a5 6.3027 0 0 0 3.9922 5.867v-6.867h2v6.871a5 6.3027 0 0 0 3.988-5.871h0.012v-7h-10z"></path>
+ <path class="yelp-svg-fill" d="m12 3a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4z"></path>
+ <path class="yelp-svg-fill" d="m16 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m9.2045 16.361h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m21.704 4.2894h6v1h-6z"></path>
+ <path class="yelp-svg-fill" d="m2 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m5.5801 4.3612h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m-6.9199 16.289h6v1h-6z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Take note that not all Gtk themes will work,
+    and some might crash streamtuner2.</p></div></div></div>
+</div>
+<p class="p">If you see ST2 hang at startup, then either edit
+    <span class="file">settings.json</span> to remove the <span class="cmd">"theme": "..."</span>
+    name, or use the <span class="code"><span class="app">streamtuner2 -d gtk_theme</span></span>
+    start command.</p>
+<p class="p">To install/enable themes just for ST2, you could create a
+    <span class="file">~/.config/streamtuner2/themes/</span> folder, or one below
+    <span class="file">/usr/share/streamtuner2/themes/</span> even.</p>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 stop_button</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Adds the toolbar button to stop streamripper/fpls - same as in
+    streamtuner1. Has become kind of redundant due to the newer
+    <span class="link"><a href="specbuttons.html" title="Special extra/mini buttons">🔌 specbuttons</a></span> plugin.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 Config prefs</span></h4></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Introduces three main menu entries:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list">
+<div class="title title-item"><h4><span class="title"><span class="guiseq"><span class="gui">Station</span> ▸ <span class="gui">Extensions</span> ▸ <span class="gui">Config save</span></span></span></h4></div>
+<p class="p">Saves the streamtuner2.json file verbatim.</p>
+</li>
+<li class="list">
+<div class="title title-item"><h4><span class="title"><span class="guiseq"><span class="gui">Station</span> ▸ <span class="gui">Extensions</span> ▸ <span class="gui">Config restore</span></span></span></h4></div>
+<p class="p">While the file dialog incorrectly says and behaves like a file
+       save dialog, it does in fact open and load the JSON file.</p>
+</li>
+<li class="list">
+<div class="title title-item"><h4><span class="title"><span class="guiseq"><span class="gui">Station</span> ▸ <span class="gui">Extensions</span> ▸ <span class="gui">Config delete</span></span></span></h4></div>
+<p class="p">The config reset additionally opens the settings window and
+       requires you to hit <span class="key"><kbd>Save</kbd></span> for confirmation. In any case
+       ST2 should also be restarted afterwards to unload disabled plugins.</p>
+</li>
+</ul></div></div></div>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 Cache reset</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Adds a <span class="key"><kbd>Cache reset</kbd></span> button in the Options tab of
+    the settings window. It shows how much space all cache files of
+    ST2 occupy. Usually the icons take up most, while the channel/station
+    archive is often just 2-3 MB. Temporary m3u/pls files can also
+    be deleted. → Tick the parts you want to have removed before hitting
+    the reset button.</p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 OGG Icon</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Introduces small state icons to make higher-quality Vorbis and
+    Opus stations stand out. (Not all channels provide exact format
+    information, so you'll mostly notice for Jamendo and Xiph.) </p></div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 Win32/subprocess</span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Wraps the player/application exec() method. Instead of simple
+    shell execution, uses the Python subprocess module or win32 API
+    functions. This is mostly unneeded on Linux (kills a few features
+    even), but avoids the cmd.exe popup and delay on Windows. Highly
+    experimental at the moment.</p></div></div>
+</div></section><section id="new_favourite"><div class="inner">
+<div class="hgroup pagewide"><h4 class="subtitle"><span class="subtitle">🔌 New favourite category </span></h4></div>
+<div class="region"><div class="contents pagewide"><p class="p">Adds a "New favourite category..." under Station &gt; Extensions menu,
+    and context menu options to copy station entries there. DND from
+    other channels works, if you preselect the new subcategory beforehand.
+    It's an afterthought/workaround for those who insist on using ST2 for
+    stream management.</p></div></div>
+</div></section>
+</div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="index.html#extra" title="Additional features">Additional features</a></li>
+<li class="links "><a href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a></li>
+<li class="links ">
+<a href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </a><span class="desc"> — User plugin installation</span>
+</li>
+</ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

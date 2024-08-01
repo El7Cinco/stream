@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Searching</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#browsing" title="Browsing channels and radio stations">Browsing channels and radio stations</a> » <a class="trail" href="streams.html" title="Streams / Stations">Streams / Stations</a> › <a class="trail" href="streams.html#actions" title="Actions">Actions</a> » <a class="trail" href="bookmarks.html" title="Bookmarks">Bookmarks</a> › <a class="trail" href="bookmarks.html#other" title="Subcategories">Subcategories</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#browsing" title="Browsing channels and radio stations">Browsing channels and radio stations</a> » <a class="trail" href="channels.html" title="Channels">Channels</a> › <a class="trail" href="channels.html#list" title="Available channels">Available channels</a> » <a class="trail" href="bookmarks.html" title="Bookmarks">Bookmarks</a> › <a class="trail" href="bookmarks.html#other" title="Subcategories">Subcategories</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#channels" title="Channel tabs">Channel tabs</a> » <a class="trail" href="bookmarks.html" title="Bookmarks">Bookmarks</a> › <a class="trail" href="bookmarks.html#other" title="Subcategories">Subcategories</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#functions" title="Functions">Functions</a> » </div>
+</div></div></header><article><div class="hgroup pagewide"><h1 class="title"><span class="title">Searching</span></h1></div>
+<div class="region">
+<div class="contents pagewide"><p class="p">There are two search functions.</p></div>
+<section id="quicksearch"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Quick search</span></h2></div>
+<div class="region"><div class="contents pagewide"><p class="p">Just enter text into the quick search box atop. Streamtuner2 will instantly highlight
+	any matches in the current stations view. If you switch tabs, just click the glass icon
+	to reapply the highlighting.</p></div></div>
+</div></section><section id="cachesearch"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Search window</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">You can get to the search dialog via <span class="guiseq"><span class="gui">Edit</span> ▸ <span class="gui">Find</span></span> or <span class="key"><kbd>Ctrl</kbd></span>+<span class="key"><kbd>F</kbd></span>.  Centrally
+	to this dialog is a text field, where you can specify the phrase
+	to scan for.</p>
+<div class="media media-image"><div class="inner"><img src="img/search.png" class="media media-block" alt=""></div></div>
+<p class="p">It either will search in:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p"><span class="gui">☐ all channels</span></p></li>
+<li class="list"><p class="p"><span class="gui">☒ last active channel/service.</span>
+                (You therefore want to switch channel tabs before
+                invoking this search mode.)</p></li>
+</ul></div></div></div>
+<p class="p">Then there are two search variants:</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list">
+<div class="title title-item"><h3><span class="title"><span class="key"><kbd>Server search</kbd></span></span></h3></div>
+<p class="p">You mostly want to use the live <span class="gui">server search</span>.  It
+	 passes your search terms to the actual directory services, and
+	 loads the most recent data into a result list.</p>
+<p class="p">This might take
+         a few seconds.  And it's not implemented for all channel plugins. 
+	 (Some websites/APIs don't have a search.)</p>
+</li>
+<li class="list">
+<div class="title title-item"><h3><span class="title"><span class="key"><kbd>Cache find</kbd></span></span></h3></div>
+<p class="p">While <span class="gui">cache find</span> would just look up entries in your
+         already downloaded channel/genre lists.  This is sufficient when
+         you're just looking for something previously seen/listened to.</p>
+</li>
+</ul></div></div></div>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="index.html#functions" title="Functions">Functions</a></li>
+<li class="links "><a href="bookmarks.html#other" title="Subcategories">Subcategories</a></li>
+</ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

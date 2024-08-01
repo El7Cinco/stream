@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title> Xiph.org</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » <a class="trail" href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </a> » <a class="trail" href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#browsing" title="Browsing channels and radio stations">Browsing channels and radio stations</a> » <a class="trail" href="channels.html" title="Channels">Channels</a> › <a class="trail" href="channels.html#list" title="Available channels">Available channels</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#channels" title="Channel tabs">Channel tabs</a> » </div>
+</div></div></header><article><div class="hgroup pagewide">
+<h1 class="title"><span class="title"><span class="media"><span class="media media-image"><img src="img/channel_xiph.png" class="media media-inline" alt=""></span></span> Xiph.org</span></h1>
+<h2 class="subtitle"><span class="subtitle"><span class="link"><a href="http://dir.xiph.org/" title="http://dir.xiph.org/">//dir.xiph.org/</a></span></span></h2>
+</div>
+<div class="region">
+<div class="contents pagewide">
+<p class="p">Xiph.org is a non-profit organization which develops and maintains
+various audio- and video-related standards.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">For example the OGG streaming/multiplexing format.</p></li>
+<li class="list"><p class="p">Audio compression schemes like Vorbis, Speex, FLAC, Opus.</p></li>
+<li class="list"><p class="p">Video encoding formats like Theora, Tarkin, Dirac.</p></li>
+<li class="list"><p class="p">The ICEcast streaming server is an alternative to SHOUTcast.</p></li>
+<li class="list"><p class="p">And the more modern .xspf (and .jspf) playlist format, which is used by all channel entries.</p></li>
+</ul></div></div></div>
+<p class="p">There are different ways for streamtuner2 to retrieve the station
+lists available on dir.xiph.org.  That's because this is a primary
+plugin, and fallback solutions therefore important.  Each fetching
+mode has its own advantages and drawbacks though.</p>
+</div>
+<section id="options"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Channel fetch mode option</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">There are now three options to retrieve Xiph directory stations.</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms"><span class="code">Cache JSON</span></dt>
+<dd class="terms"><p class="p">There's a caching server specifically for streamtuner2. It fixes
+    Xiphs quirky JSON API, and provides a simpler interface. It can't
+    correct the invalid encodings however, which is why you see ????
+    question marks a lot. This method does not reveal station homepages,
+    but enables the channel/server search.</p></dd>
+<dt class="terms"><span class="code">Clunky YP.XML</span></dt>
+<dd class="terms">
+<p class="p">The "yellow pages" YP.XML contains the full list of all known
+    ICEcast streaming servers. It's however quite bulky and super slow
+    to download. It furthermore clogs up a lot of memory, and requires
+    manual searching (only cache search works). Which is why streamtuner2
+    is trying hard to avoid it. It doesn't contain station homepages either.
+    </p>
+<p class="p">It's only still an option, because it's likely to remain accessible
+    after Xiph.org rewrites their directory service. (Which though is
+    getting delayed since a few years already.)
+    You can set the special "buffy" mode in your <span class="file">settings.json</span>
+    to keep the whole YP.XML in memory. Which avoids the
+    slow station list download/unpacking.
+    </p>
+</dd>
+<dt class="terms"><span class="code">Forbidden fruits</span></dt>
+<dd class="terms">
+<p class="p">As new alternative, you can let ST2 directly scrape the station
+    lists from dir.xiph.org (like it does for other channels).  This is
+    something which Xiph doesn't approve of.  But the drawbacks of their
+    alternative offerings are too severe and user-unfriendly; which is
+    why there's this raw HTML extraction mode now.</p>
+<p class="p">Ass of May 2020 the website listings don't contain station homepages
+    anymore either. So, the accessibility advantage is gone. However,
+    stations now list the raw streaming server url now. And extraction
+    is comparatively faster still.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">A miximum of 100 entries get fetched in this mode however
+    (which is 5 pages à 20 entries).</p></div></div></div>
+</div>
+</dd>
+</dl></div></div></div>
+<p class="p">The filter-by-bitrate option is now a generic plugin.</p>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="channels.html#list" title="Available channels">Available channels</a></li>
+<li class="links "><a href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a></li>
+<li class="links "><a href="index.html#channels" title="Channel tabs">Channel tabs</a></li>
+</ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

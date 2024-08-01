@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Audio players</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation"><div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#functions" title="Functions">Functions</a> » <a class="trail" href="configuration.html" title="Configuration / Settings dialog">Configuration / Settings dialog</a> › <a class="trail" href="configuration.html#apps" title="Player application settings">Player application settings</a> » </div></div></div></header><article><div class="hgroup pagewide"><h1 class="title"><span class="title">Audio players</span></h1></div>
+<div class="region">
+<div class="contents pagewide">
+<p class="p">On BSD/Linux systems there are a plethora of audio players. In streamtuner2 you can
+	<span class="link"><a href="configuration.html" title="Configuration / Settings dialog">configure</a></span> most of them as target application. Mostly it makes sense to use a single
+	application for all audio formats. But at least the */* media type should be handled
+	by a generic player, like vlc.</p>
+<p class="p"><span class="media"><span class="media media-image"><img src="img/configapps.png" class="media media-inline" alt=""></span></span></p>
+<p class="p">A few common applications and invocation strings to use are:</p>
+<div class="table"><div class="inner"><div class="region"><table class="table">
+<tr>
+<td><p class="p"><span class="app">audio/*</span></p></td>
+<td style="border-left-style: solid;"><p class="p"><span class="cmd">audacious</span></p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">xmms2 %m3u</span></p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">amarok -l %pls</span></p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">exaile</span></p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">video/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">mplayer %srv</span></p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">video/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">totem %u</span></p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">*/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">vlc %u</span></p></td>
+</tr>
+</table></div></div></div>
+<p class="p">Some audio players open a second instance when you actually want to switch radios.
+	In this case it's a common workaround to write <span class="code">pkill vlc ; vlc %u</span> instead,
+	which ends the previous player process and starts it anew.
+        For VLC there's however also the <span class="code">--one-instance</span> option, which sometimes
+        works better. (And sometimes not.)</p>
+<p class="p">Some applications, like Rhythmbox or Banshee, are primarily playlist managers, not players,
+        and cannot be invoked with a station URL. This makes them less suitable for use with streamtuner2.
+        (Same goes for streamtuner2 itself. It's not a player, but just a playlist browser.)</p>
+<div class="links topiclinks"><div class="inner"><div class="region"><div class="links-divs"><div class="linkdiv "><a class="linkdiv" href="modarchive.html" title="The MOD Archive"><span class="title"><span class="media"><span class="media media-image"><img src="img/channel_modarchive.png" class="media media-inline" alt=""></span></span> The MOD Archive</span><span class="linkdiv-dash"> — </span><span class="desc">Tracker audio file collection.</span></a></div></div></div></div></div>
+</div>
+<section id="placeholders"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">URL placeholders</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Listed audio players get run with a streaming server address (URL).
+	These can either be direct MP3/Ogg servers (<span class="var">http://example.org:7843/</span>)
+	and sometimes playlist files (<span class="var">http://example.org/listen.pls</span>)
+	- depending on the channel directory.</p>
+<p class="p">Most audio players automatically handle any station URLs. Some however
+	support just a few formats, or can't handle modern XSPF playlists for
+	instance. Which is why you can control this by adding a placeholder
+	after the configured application name:</p>
+<div class="table"><div class="inner"><div class="region"><table class="table">
+<thead><tr>
+<td><p class="p">Placeholder</p></td>
+<td style="border-left-style: solid;"><p class="p">Alternatives</p></td>
+<td style="border-left-style: solid;"><p class="p">URL/Filename type</p></td>
+</tr></thead>
+<tr>
+<td><p class="p">%pls</p></td>
+<td style="border-left-style: solid;"><p class="p">%url %u %r</p></td>
+<td style="border-left-style: solid;"><p class="p">Either a remote .pls resource (fastest), or a local .pls file (if converted)</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%m3u</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">%f %g %m</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Provides a local .m3u file for the streaming station</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%srv</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">%d %s</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Direct link to first streaming address, e.g. http://72.5.9.33:7500</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%xspf</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">%x</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Xiph.org shareable playlist format (for modern players)</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%jspf</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">%j</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">JSON playlist format (widely unsupported)</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%asx</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Some obscure Windows playlist format (don't use that)</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%smil</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Standardized multimedia sequencing lists (which nobody uses either)</p></td>
+</tr>
+</table></div></div></div>
+<p class="p">Preferrably use the long %abbr names for configuration. The
+        default is <span class="var">%pls</span> if you leave it out. (Most directories
+        already provide PLS files, which avoids any extra conversion by ST2
+        which sometimes delay playback.)</p>
+<p class="p">A few channels (like Jamendo) send custom JSON playlist snippets,
+        which no audio player would understand. Which is why they're always
+        pre-converted.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents">
+<p class="p">Most audio players like %pls, yet sometimes the
+	older %m3u format more.  Streamripper requires %srv for recording.</p>
+<p class="p">Use the newer <span class="var">%xspf</span> format if your player supports
+	it. This format retains the maximum of station infos (such as
+	homepages etc.), and thus often makes for better bookmarking directly
+	in your player.</p>
+</div></div></div>
+</div>
+</div></div>
+</div></section><section id="row_placeholders"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Other placeholders</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">In addition to stream URL + type placeholders (<span class="var">%r</span>, <span class="var">%x</span>, 
+	<span class="var">%pls</span>, <span class="var">%m3u</span>, etc),	you can also pass station
+	info placeholders. These contain the stream information like title or
+	bitrate, or any other internal field:</p>
+<div class="table"><div class="inner"><div class="region"><table class="table">
+<thead><tr>
+<td><p class="p">Placeholder</p></td>
+<td style="border-left-style: solid;"><p class="p">As variable</p></td>
+<td style="border-left-style: solid;"><p class="p">Field content</p></td>
+</tr></thead>
+<tr>
+<td><p class="p">%title</p></td>
+<td style="border-left-style: solid;"><p class="p">$title</p></td>
+<td style="border-left-style: solid;"><p class="p">Station title</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%genre</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$genre</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Stream category or genre list</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%playing</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$playing</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Currently playing song, or geographic location</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">-</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$url</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Unfiltered stream url (may contain internal urn:xx:id)</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%format</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$format</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">The MIME type ("audio/mpeg")</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%bitrate</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$bitrate</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Known stream bitrate, if any</p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p">%extra</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$extra</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">Comments or timer settings</p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p">%favourite</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">$favourite</p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p">If bookmarked</p></td>
+</tr>
+</table></div></div></div>
+<p class="p">Not all fields are used in all channels. Sometimes they're repurposed (like <span class="var">playing</span>
+	often doubles as Location: field). And some channels may even use custom internal names.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">You often want to use such placeholders if you have a player or recording shell script, such as
+	<span class="link"><a href="http://fossil.include-once.org/streamtuner2/artifact/51b695f41d9f9ad2" title="http://fossil.include-once.org/streamtuner2/artifact/51b695f41d9f9ad2"><span class="file">contrib/cmdline/streamripper_addgenre</span></a></span>
+	to handle them. Or if you define a <span class="link"><a href="specbuttons.html" title="Special extra/mini buttons">mini-toolbar specbutton</a></span>
+	with custom commands.</p></div></div></div>
+</div>
+</div></div>
+</div></section><section id=""><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Other players</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Here a few other configuration examples for other
+players/backends.</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms">MPD</dt>
+<dd class="terms">
+<p class="p">
+       Rocus van Oosten <span class="link"><a href="https://sourceforge.net/p/streamtuner2/discussion/1173108/thread/82b6be86/" title="https://sourceforge.net/p/streamtuner2/discussion/1173108/thread/82b6be86/">recommends</a></span>
+       following wrapper script to start playing radio streams via MPD right away:
+    </p>
+<div class="code"><pre class="contents"><code>MPD_HOST='10.0.0.222' # or your MPD host
+export MPD_HOST
+mpc clear
+mpc load $1
+mpc play</code></pre></div>
+<p class="p">
+	Save it as <span class="file">mpc-pls</span> script and configure it in streamtuner as
+	<span class="cmd">mpc-pls %pls</span> for example. You can find an extended
+	version in the <span class="file">contrib/cmdline/</span> directory.
+    </p>
+</dd>
+</dl></div></div></div>
+</div></div>
+</div></section><section id="windows"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Windows config</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">There's a few things you have to take care of when configuring players
+and recording apps on Windows. Common applications and settings would be:</p>
+<div class="table"><div class="inner"><div class="region"><table class="table">
+<tr><td colspan="3"><p class="p"><span class="em">Player config</span></p></td></tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/mpeg</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">wmplayer.exe %asx</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><div class="note note-bug" title="Bug">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m7 8v7h0.0078a5 6.3027 0 0 0 3.9922 5.867v-6.867h2v6.871a5 6.3027 0 0 0 3.988-5.871h0.012v-7h-10z"></path>
+ <path class="yelp-svg-fill" d="m12 3a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4z"></path>
+ <path class="yelp-svg-fill" d="m16 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m9.2045 16.361h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m21.704 4.2894h6v1h-6z"></path>
+ <path class="yelp-svg-fill" d="m2 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m5.5801 4.3612h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m-6.9199 16.289h6v1h-6z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Windows media player doesn't understand PLS or M3U files.</p></div></div></div>
+</div></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">video/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">C:\Programs\VLC\vlc.exe %srv</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">VLC pretty much works alike on Windows.</p></div></div></div>
+</div></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">url/http</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">"C:/Program Files/Mozilla Firefox/firefox.exe" %url</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">It's best to enclose paths with spaces in quotes.</p></div></div></div>
+</div></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">url/http</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">iexplore.exe %url</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">IE is not recommended, of course.</p></div></div></div>
+</div></td>
+</tr>
+<tr class="shade"><td style="border-top-style: solid;" colspan="3"><p class="p"><span class="em">Recording apps</span></p></td></tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/*</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd">/D "C:\Programs\Streamripper" streamripper.exe %srv</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><div class="note note-bug" title="Bug">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m7 8v7h0.0078a5 6.3027 0 0 0 3.9922 5.867v-6.867h2v6.871a5 6.3027 0 0 0 3.988-5.871h0.012v-7h-10z"></path>
+ <path class="yelp-svg-fill" d="m12 3a4 4 0 0 0-4 4h8a4 4 0 0 0-4-4z"></path>
+ <path class="yelp-svg-fill" d="m16 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m9.2045 16.361h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m21.704 4.2894h6v1h-6z"></path>
+ <path class="yelp-svg-fill" d="m2 12h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(30)" d="m5.5801 4.3612h6v1h-6z"></path>
+ <path class="yelp-svg-fill" transform="rotate(-30)" d="m-6.9199 16.289h6v1h-6z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">Command line programs need the /D switch first, then its path enclosed in quotes and a space before the program.</p></div></div></div>
+</div></td>
+</tr>
+</table></div></div></div>
+<p class="p">You can avoid a few issues: if you put your executables in paths without
+spaces, or set the system $PATH variable accordingly.</p>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">As reported by Oliver in the sourceforge Discussion
+board.</p></div></div></div>
+</div>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide">
+<div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul><li class="links "><a href="configuration.html#apps" title="Player application settings">Player application settings</a></li></ul></div>
+</div></div>
+<div class="links seealsolinks"><div class="inner">
+<div class="title"><h2><span class="title">See Also</span></h2></div>
+<div class="region"><ul><li class="links "><a href="index.html#functions" title="Functions">Functions</a></li></ul></div>
+</div></div>
+</div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

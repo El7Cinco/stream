@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title> Reddit</title>
+<link rel="stylesheet" type="text/css" href="C.css">
+<script type="text/javascript" src="highlight.pack.js"></script><script>
+document.addEventListener('DOMContentLoaded', function() {
+  var matches = document.querySelectorAll('code.syntax')
+  for (var i = 0; i < matches.length; i++) {
+    hljs.highlightBlock(matches[i]);
+  }
+}, false);</script><script type="text/javascript" src="yelp.js"></script>
+</head>
+<body><main><div class="page">
+<header><div class="inner pagewide"><div class="trails" role="navigation">
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#extra" title="Additional features">Additional features</a> » <a class="trail" href="pluginmanager2.html" title="Plugin Manager 2 - 📦 Add">Plugin Manager 2 - <span class="key"><kbd>📦 Add</kbd></span> </a> » <a class="trail" href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#browsing" title="Browsing channels and radio stations">Browsing channels and radio stations</a> » <a class="trail" href="channels.html" title="Channels">Channels</a> › <a class="trail" href="channels.html#list" title="Available channels">Available channels</a> » </div>
+<div class="trail">
+<a class="trail" href="index.html" title="♪ Streamtuner2"><span class="media"><span class="media media-image"><img src="img/logo.png" class="media media-inline" alt="♪"></span></span> Streamtuner2 </a> › <a class="trail" href="index.html#channels" title="Channel tabs">Channel tabs</a> » </div>
+</div></div></header><article><div class="hgroup pagewide">
+<h1 class="title"><span class="title"><span class="media"><span class="media media-image"><img src="img/channel_reddit.png" class="media media-inline" alt=""></span></span> Reddit</span></h1>
+<h2 class="subtitle"><span class="subtitle"><span class="link"><a href="http://reddit.com/r/Music" title="http://reddit.com/r/Music">//reddit.com/r/Music</a></span></span></h2>
+</div>
+<div class="region">
+<div class="contents pagewide">
+<p class="p">Reddit harbours a growing list of music-related communities.
+        User-contributed audio files or audio/video links can be found
+	across almost two hundred subreddit boards. There's always a
+	mix of new bands or fresh releases to be found, along with
+	links to all-time favourites etc.</p>
+<div class="list"><div class="inner"><div class="region"><ul class="list">
+<li class="list"><p class="p">Around <span class="em">620</span> subreddits are queried. That's just a selected part
+          though. Most others do not see as many audio posts / or are just for
+          discussion and news.</p></li>
+<li class="list"><p class="p">Besides youtube/mp3 files, this channel may also
+          list Soundcloud/Mixcloud/Bandcamp links.</p></li>
+<li class="list"><p class="p"><span class="link"><a href="http://radioreddit.com/" title="http://radioreddit.com/">Radioreddit.com</a></span>
+          even provides streaming servers. Its categories are: main, random,
+          rock, metal, indie, electronic, hiphop, talk, festival.</p></li>
+<li class="list"><p class="p">Thumbnails are slightly larger (32x26) than regular favicons.</p></li>
+<li class="list"><p class="p">All entries also show poster name and user votes.</p></li>
+</ul></div></div></div>
+<p class="p">See the config options if you want to keep regular webpage posts - instead
+        of just showing playable content.</p>
+</div>
+<section id="statusicons"><div class="inner">
+<div class="hgroup pagewide"><h3 class="subtitle"><span class="subtitle">Status icons</span></h3></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">Station entries may contain a status icon (leftmost; where usually
+        the bookmarks ✩ star goes).
+        It's a quick indicator of what type of content is linked:</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms">▶</dt>
+<dd class="terms"><p class="p">Directly playable entry (MP3, MP4, Youtube, MIDI)</p></dd>
+<dt class="terms">▶▶</dt>
+<dd class="terms"><p class="p">Walled garden (Soundcloud, Spotify, Bandcamp, Mixcloud) → playable</p></dd>
+<dt class="terms">▮▮</dt>
+<dd class="terms"><p class="p">Walled gardens without playback handler.</p></dd>
+<dt class="terms">📄</dt>
+<dd class="terms"><p class="p">Just a web-link. Those are kept with the ☒ keep all option.</p></dd>
+</dl></div></div></div>
+<p class="p">Please note that <span class="guiseq"><span class="gui">Channel</span> ▸ <span class="gui">Reload category
+        tree</span></span> will retrieve a differently structured list of
+        subreddits from the /r/music wiki.</p>
+</div></div>
+</div></section><section id="options"><div class="inner">
+<div class="hgroup pagewide"><h2 class="title"><span class="title">Configuration</span></h2></div>
+<div class="region"><div class="contents pagewide">
+<p class="p">There's a few options for the reddit plugin:</p>
+<div class="terms"><div class="inner"><div class="region"><dl class="terms">
+<dt class="terms"><span class="code">🔟  Number of pages to fetch </span></dt>
+<dd class="terms"><p class="p">Influences how many JSON requests are made to assemble a list of
+    subreddit posts with playable content. (For this plugin that's
+    configurable, because counting streams wouldn't work as reddit
+    result lists vary wildly in their usable links.)</p></dd>
+<dt class="terms"><span class="code">🔰 Filter walled gardens </span></dt>
+<dd class="terms">
+<p class="p">Many music posts on reddit meanwhile point to one of Soundcloud,
+    Spotify, Bandcamp, Mixcloud. Those are basically just links you had
+    open in your browser. --
+    Now those are labeled "walled gardens" here, because they're hording
+    user content behind a paywall/registration-wall, fiddly NIH APIs,
+    non-standard audio formats, web-only players and sessioning.</p>
+<p class="p">There's a few players or tools for those better-known hosters. But
+    smaller services fall under the radar. Which is why I think it's unfair
+    to provide out-of-the-box support for just those four services.
+    -- But anyway, you can disable filtering them, if you like. And then
+    <span class="link"><a href="config_apps.html" title="Audio players">configure</a></span> a custom player:</p>
+<div class="table"><div class="inner"><div class="region"><table class="table">
+<tr>
+<td><p class="p"><span class="app">audio/soundcloud</span></p></td>
+<td style="border-left-style: solid;"><p class="p"><span class="cmd"><span class="link"><a href="https://github.com/rekado/soundCLI" title="https://github.com/rekado/soundCLI">soundcli %srv</a></span></span></p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/spotify</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd"><span class="link"><a href="https://github.com/fabiofalci/sconsify" title="https://github.com/fabiofalci/sconsify">sconsify %srv</a></span></span></p></td>
+</tr>
+<tr>
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/bandcamp</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd"><span class="link"><a href="https://rg3.github.io/youtube-dl/supportedsites.html" title="https://rg3.github.io/youtube-dl/supportedsites.html">youtube-dl -g %srv</a></span></span></p></td>
+</tr>
+<tr class="shade">
+<td style="border-top-style: solid;"><p class="p"><span class="app">audio/mixcloud</span></p></td>
+<td style="border-top-style: solid;border-left-style: solid;"><p class="p"><span class="cmd"><span class="link"><a href="https://rg3.github.io/youtube-dl/supportedsites.html" title="https://rg3.github.io/youtube-dl/supportedsites.html">vlc $(youtube-dl -g %srv)</a></span></span></p></td>
+</tr>
+</table></div></div></div>
+<p class="p">Obviously you want to pipe <span class="cmd">youtube-dl</span> to an actual audio player
+    again. VLC also supports a few services directly or via plugins.</p>
+</dd>
+<dt class="terms"><span class="code">💫 Keep all web links </span></dt>
+<dd class="terms"><p class="p">Besides audio/video links, some subreddits link to album art or
+    are just news feeds. Enable the "keep all" option to retain them.
+    Such entries will open in your web browser instead of an audio player,
+    of course.</p></dd>
+</dl></div></div></div>
+<div class="note" title="Note">
+<svg width="24" height="24" version="1.1">
+ <path class="yelp-svg-fill" d="m4 3h16c0.554 0 1 0.446 1 1v11h-6v6h-11c-0.554 0-1-0.446-1-1v-16c0-0.554 0.446-1 1-1z"></path>
+ <path class="yelp-svg-fill" d="m17 16h4l-5 5v-4c0-0.554 0.446-1 1-1z"></path>
+</svg><div class="inner"><div class="region"><div class="contents"><p class="p">To utilize Soundcloud links, there's an <span class="link"><a href="contrib_features.html" title="→ Feature plugins">extra url_soundcloud plugin</a></span>. 
+ It overrides the <span class="file">audio/soundcloud</span> player config, and
+ resolves such streams to MP3 urls (session typically times out
+ quickly, so no bookmarking/export possible etc).</p></div></div></div>
+</div>
+</div></div>
+</div></section><section class="links" role="navigation"><div class="inner">
+<div class="hgroup pagewide"></div>
+<div class="contents pagewide"><div class="links guidelinks"><div class="inner">
+<div class="title"><h2><span class="title">More Information</span></h2></div>
+<div class="region"><ul>
+<li class="links "><a href="channels.html#list" title="Available channels">Available channels</a></li>
+<li class="links "><a href="configuration.html#plugins" title="Channel and feature plugins and settings">Channel and feature plugins and settings</a></li>
+<li class="links "><a href="index.html#channels" title="Channel tabs">Channel tabs</a></li>
+</ul></div>
+</div></div></div>
+</div></section>
+</div>
+<div class="clear"></div></article><footer><div class="inner pagewide"></div></footer>
+</div></main></body>
+</html>

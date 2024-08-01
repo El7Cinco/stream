@@ -1,0 +1,60 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=streamtuner2.chm
+Contents file=z:\home\mario\projects\streamtuner2\help\html\Table of Contents.hhc
+Default topic=Z:\home\mario\projects\streamtuner2\help\html\index.html
+Display compile progress=No
+Index file=z:\home\mario\projects\streamtuner2\help\html\Index.hhk
+Language=0x407 German (Germany)
+
+
+[FILES]
+Z:\home\mario\projects\streamtuner2\help\html\index.html
+Z:\home\mario\projects\streamtuner2\help\html\bookmarks.html
+Z:\home\mario\projects\streamtuner2\help\html\channels.html
+Z:\home\mario\projects\streamtuner2\help\html\cli.html
+Z:\home\mario\projects\streamtuner2\help\html\config_apps.html
+Z:\home\mario\projects\streamtuner2\help\html\configuration.html
+Z:\home\mario\projects\streamtuner2\help\html\contrib_channels.html
+Z:\home\mario\projects\streamtuner2\help\html\contrib_features.html
+Z:\home\mario\projects\streamtuner2\help\html\dragndrop.html
+Z:\home\mario\projects\streamtuner2\help\html\edit.html
+Z:\home\mario\projects\streamtuner2\help\html\exportcat.html
+Z:\home\mario\projects\streamtuner2\help\html\extending.html
+Z:\home\mario\projects\streamtuner2\help\html\favicon.html
+Z:\home\mario\projects\streamtuner2\help\html\filetypes.html
+Z:\home\mario\projects\streamtuner2\help\html\filtermusic.html
+Z:\home\mario\projects\streamtuner2\help\html\global_key.html
+Z:\home\mario\projects\streamtuner2\help\html\glossary.html
+Z:\home\mario\projects\streamtuner2\help\html\homepage.html
+Z:\home\mario\projects\streamtuner2\help\html\index.html
+Z:\home\mario\projects\streamtuner2\help\html\internet_radio_org_uk.html
+Z:\home\mario\projects\streamtuner2\help\html\introduction.html
+Z:\home\mario\projects\streamtuner2\help\html\jamendo.html
+Z:\home\mario\projects\streamtuner2\help\html\liveradio.html
+Z:\home\mario\projects\streamtuner2\help\html\modarchive.html
+Z:\home\mario\projects\streamtuner2\help\html\myoggradio.html
+Z:\home\mario\projects\streamtuner2\help\html\peertube.html
+Z:\home\mario\projects\streamtuner2\help\html\playing.html
+Z:\home\mario\projects\streamtuner2\help\html\pluginmanager2.html
+Z:\home\mario\projects\streamtuner2\help\html\radiobrowser.html
+Z:\home\mario\projects\streamtuner2\help\html\radionomy.html
+Z:\home\mario\projects\streamtuner2\help\html\recording.html
+Z:\home\mario\projects\streamtuner2\help\html\reddit.html
+Z:\home\mario\projects\streamtuner2\help\html\reloading.html
+Z:\home\mario\projects\streamtuner2\help\html\saving.html
+Z:\home\mario\projects\streamtuner2\help\html\search.html
+Z:\home\mario\projects\streamtuner2\help\html\shoutcast.html
+Z:\home\mario\projects\streamtuner2\help\html\somafm.html
+Z:\home\mario\projects\streamtuner2\help\html\specbuttons.html
+Z:\home\mario\projects\streamtuner2\help\html\streams.html
+Z:\home\mario\projects\streamtuner2\help\html\surfmusik.html
+Z:\home\mario\projects\streamtuner2\help\html\technical.html
+Z:\home\mario\projects\streamtuner2\help\html\timer.html
+Z:\home\mario\projects\streamtuner2\help\html\tunein.html
+Z:\home\mario\projects\streamtuner2\help\html\ubuntuusersm.html
+Z:\home\mario\projects\streamtuner2\help\html\xiph.html
+Z:\home\mario\projects\streamtuner2\help\html\youtube.html
+
+[INFOTYPES]
+
